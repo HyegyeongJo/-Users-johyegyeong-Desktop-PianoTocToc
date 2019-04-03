@@ -46,6 +46,8 @@ TextureImporter:
     21300082: Star2
     21300084: Star3
     21300086: Pillar
+    21300088: Flower_01
+    21300090: Flower_02
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -1027,6 +1029,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d072d8f0eaf9f460ebc10039655bd780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flower_01
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 2789
+        width: 71
+        height: 45
+      alignment: 9
+      pivot: {x: 0.49614877, y: 0.026009114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5c92b022e0843829dcac27385496c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flower_02
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 2348
+        width: 8
+        height: 515
+      alignment: 9
+      pivot: {x: 0.49845886, y: 0.001084174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2b2219c68884b0e9a350173de38edf
       vertices: []
       indices: 
       edges: []

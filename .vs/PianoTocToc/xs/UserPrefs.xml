@@ -1,11 +1,5 @@
 ﻿<Properties StartupConfiguration="{1768D319-538C-1E62-F2D8-B1934A50E97E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AccKeyCollisionEvent.cs">
-    <Files>
-      <File FileName="Assets/Scripts/PianoKeyCollisionEvent.cs" Line="41" Column="42" />
-      <File FileName="Assets/Scripts/PianoKeyPressedAudio.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AccKeyCollisionEvent.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />

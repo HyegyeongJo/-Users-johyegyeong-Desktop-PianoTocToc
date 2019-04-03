@@ -1,127 +1,205 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using E7.Native;
 
 public class PianoKeyPressedAudio : MonoBehaviour
 {
-    public AudioClip pianoNote;
+    [SerializeField] AudioClip[] notes;
+    AudioSource player;
 
-    NativeAudioPointer nativeAudioPointer;
-    NativeAudio.PlayOptions playOptions;
+    NativeAudioPointer[] pointers;
+    NativeAudioController[] controllers;
+    int audioTrackIndex, audioTrackCount = 5;
 
-    Coroutine playCrt;
-
-    private void Start()
+    void Awake()
     {
-        NativeAudio.Initialize();
-        nativeAudioPointer = NativeAudio.Load(pianoNote);
-        playOptions = NativeAudio.PlayOptions.defaultOptions;
-        playOptions.volume = 0f;
-        playOptions.trackLoop = false;
+        //SetDspBufferSize(64);
+
+        player = gameObject.AddComponent<AudioSource>();
+
+        NativeAudio.Initialize(new NativeAudio.InitializationOptions
+        {
+            androidAudioTrackCount = audioTrackCount,
+        });
+        pointers = new NativeAudioPointer[notes.Length];
+        controllers = new NativeAudioController[notes.Length];
     }
 
-    private void OnDisable()
+    void SetDspBufferSize(int bufferLenfth)
     {
-        nativeAudioPointer.Unload();
+        var config = AudioSettings.GetConfiguration();
+        config.dspBufferSize = bufferLenfth;
+        AudioSettings.Reset(config);
+        AudioSettings.GetDSPBufferSize(out int bufferLength, out int numBuffers);
+        Debug.Log(string.Format("dspBufferLength: {0}, numBuffers: {1}", bufferLength, numBuffers));
+    }
+
+    void Start()
+    {
+        for (int i = 0; i < notes.Length; i++)
+        {
+            pointers[i] = NativeAudio.Load(notes[i]);
+        }
     }
 
     void Update()
     {
+#if UNITY_EDITOR
+        PlayWithUniyAudio();
+#else
+        PlayWithNativeAudio();
+#endif
+    }
+
+    void PlayWithUniyAudio()
+    {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            PlayFrom(0f);
+            player.PlayOneShot(notes[0]);
         }
         else if (Input.GetKeyDown(KeyCode.B))
         {
-            PlayFrom(2f);
+            player.PlayOneShot(notes[1]);
         }
         else if (Input.GetKeyDown(KeyCode.C))
         {
-            PlayFrom(4f);
+            player.PlayOneShot(notes[2]);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            PlayFrom(6f);
+            player.PlayOneShot(notes[3]);
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
-            PlayFrom(8f);
+            player.PlayOneShot(notes[4]);
         }
         else if (Input.GetKeyDown(KeyCode.F))
         {
-            PlayFrom(10f);
+            player.PlayOneShot(notes[5]);
         }
         else if (Input.GetKeyDown(KeyCode.G))
         {
-            PlayFrom(12f);
+            player.PlayOneShot(notes[6]);
         }
         else if (Input.GetKeyDown(KeyCode.H))
         {
-            PlayFrom(14f);
+            player.PlayOneShot(notes[7]);
         }
         else if (Input.GetKeyDown(KeyCode.I))
         {
-            PlayFrom(16f);
+            player.PlayOneShot(notes[8]);
         }
         else if (Input.GetKeyDown(KeyCode.J))
         {
-            PlayFrom(18f);
+            player.PlayOneShot(notes[9]);
         }
         else if (Input.GetKeyDown(KeyCode.K))
         {
-            PlayFrom(20f);
+            player.PlayOneShot(notes[10]);
         }
         else if (Input.GetKeyDown(KeyCode.L))
         {
-            PlayFrom(22f);
+            player.PlayOneShot(notes[11]);
         }
         else if (Input.GetKeyDown(KeyCode.M))
         {
-            PlayFrom(24f);
+            player.PlayOneShot(notes[12]);
         }
         else if (Input.GetKeyDown(KeyCode.N))
         {
-            PlayFrom(26f);
+            player.PlayOneShot(notes[13]);
         }
         else if (Input.GetKeyDown(KeyCode.O))
         {
-            PlayFrom(28f);
+            player.PlayOneShot(notes[14]);
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
-            PlayFrom(30f);
+            player.PlayOneShot(notes[15]);
         }
         else if (Input.GetKeyDown(KeyCode.Q))
         {
-            PlayFrom(32f);
+            player.PlayOneShot(notes[16]);
         }
     }
 
-    int trackIndex = 0;
-    private void PlayFrom(float offset)
+    void PlayWithNativeAudio()
     {
-        playOptions.volume = 1f;
-        playOptions.offsetSeconds = offset;
-        playOptions.audioPlayerIndex = trackIndex++ % NativeAudio.InitializationOptions.defaultOptions.androidAudioTrackCount;
-        NativeAudioController nativeAudioController = nativeAudioPointer.Play(playOptions);
-        //if (playCrt != null)
-        //{
-        //    StopCoroutine(playCrt);
-        //}
-        playCrt = StartCoroutine(DecreaseVolume(nativeAudioController));
-    }
-
-    IEnumerator DecreaseVolume(NativeAudioController ctrl)
-    {
-        float volume = 1f;
-        while (volume > 0f)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            volume -= Time.deltaTime;
-            volume = Mathf.Clamp01(volume);
-            ctrl.SetVolume(volume);
-            yield return null;
+            controllers[0] = PlayWithNativeAudio(pointers[0]);
         }
-        ctrl.Stop();
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[1]);
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[2]);
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[3]);
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[4]);
+        }
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[5]);
+        }
+        else if (Input.GetKeyDown(KeyCode.G))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[6]);
+        }
+        else if (Input.GetKeyDown(KeyCode.H))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[7]);
+        }
+        else if (Input.GetKeyDown(KeyCode.I))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[8]);
+        }
+        else if (Input.GetKeyDown(KeyCode.J))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[9]);
+        }
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[10]);
+        }
+        else if (Input.GetKeyDown(KeyCode.L))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[11]);
+        }
+        else if (Input.GetKeyDown(KeyCode.M))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[12]);
+        }
+        else if (Input.GetKeyDown(KeyCode.N))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[13]);
+        }
+        else if (Input.GetKeyDown(KeyCode.O))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[14]);
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[15]);
+        }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            controllers[0] = PlayWithNativeAudio(pointers[16]);
+        }
+    }
+
+    NativeAudioController PlayWithNativeAudio(NativeAudioPointer ptr)
+    {
+        var options = NativeAudio.PlayOptions.defaultOptions;
+        options.audioPlayerIndex = audioTrackIndex;
+        options.offsetSeconds = 0f;
+        audioTrackIndex = (audioTrackIndex + 1) % audioTrackCount;
+        return ptr.Play();
     }
 }
