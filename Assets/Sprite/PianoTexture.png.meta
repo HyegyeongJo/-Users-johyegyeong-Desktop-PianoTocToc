@@ -337,12 +337,12 @@ TextureImporter:
       name: NodeSeam
       rect:
         serializedVersion: 2
-        x: 1867
-        y: 2390
-        width: 1001
-        height: 1667
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 105
+        y: 2246
+        width: 950
+        height: 1773
+      alignment: 9
+      pivot: {x: 0.5020919, y: 0.0034640979}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
