@@ -31,6 +31,18 @@ public class Accompaniment_Player : MonoBehaviour
         if (auto)
         {
             node = Mathf.FloorToInt(timer * BPM / 60) % play.Length;
+
+
+
+            if (node == play.Length - 1)
+            {
+                // ClearMusic();
+                 //BPM += 50;
+                auto = false;
+
+            }
+
+
             if (prev != node)
             {
                 prev = node;

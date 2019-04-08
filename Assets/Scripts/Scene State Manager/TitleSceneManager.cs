@@ -7,6 +7,7 @@ public class TitleSceneManager : MonoBehaviour
 {
     public GameObject title;
 
+    public GameObject flowerPiano;
     public GameObject piano;
 
     public GameObject pond_1;
@@ -63,7 +64,7 @@ public class TitleSceneManager : MonoBehaviour
     void PondClearEvent()
     {
         title.SetActive(false);
-        piano.SetActive(true);
+        flowerPiano.SetActive(true);
 
         pond_1.SetActive(true);
         Score.ShowUI();
@@ -74,7 +75,7 @@ public class TitleSceneManager : MonoBehaviour
     void SpiderClearEvent()
     {
         title.SetActive(false);
-        piano.SetActive(true);
+        flowerPiano.SetActive(true);
 
         spider_2.SetActive(true);
         Score.ShowUI();
@@ -85,7 +86,7 @@ public class TitleSceneManager : MonoBehaviour
     void RabbitClearEvent()
     {
         title.SetActive(false);
-        piano.SetActive(true);
+        flowerPiano.SetActive(true);
 
         rabbit_3.SetActive(true);
         Score.ShowUI();
@@ -96,7 +97,7 @@ public class TitleSceneManager : MonoBehaviour
     void BearClearEvent()
     {
         title.SetActive(false);
-        piano.SetActive(true);
+        flowerPiano.SetActive(true);
 
         bear_4.SetActive(true);
         Score.ShowUI();
@@ -107,7 +108,7 @@ public class TitleSceneManager : MonoBehaviour
     void FuntoryClearEvent()
     {
         title.SetActive(false);
-        piano.SetActive(true);
+        flowerPiano.SetActive(true);
 
         funtorySonge_5.SetActive(true);
         Score.ShowUI();

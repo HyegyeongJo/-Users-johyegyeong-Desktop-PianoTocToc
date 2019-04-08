@@ -6,6 +6,7 @@ public class PianoKeyCollisionEvent : MonoBehaviour
 {
     //public AudioClip[] pianoNote;
     //private AudioSource pianoNoteSource;
+    public Transform collisionParticle;
 
     public delegate void PianoKeyCheckEventHandler();
     public static event PianoKeyCheckEventHandler DoOn_1 = () => { };
@@ -33,73 +34,104 @@ public class PianoKeyCollisionEvent : MonoBehaviour
         if(col.gameObject.tag == "1_Do")
         {
             DoOn_1();
-            Debug.Log("1_Do");
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "2_Re")
         {
             ReOn_2();
-            Debug.Log("2_RE");
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "3_Mi")
         {
             MiOn_3();
-            Debug.Log("3_Mi");
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "4_Fa")
         {
             FaOn_4();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "5_Sol")
         {
             SolOn_5();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "6_Ra")
         {
             RaOn_6();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "7_Si")
         {
             SiOn_7();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "8_Do")
         {
             DoOn_8();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "9_Re")
         {
           ReOn_9();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "10_Mi")
         {
           MiOn_10();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "11_Fa")
         {
          FaOn_11();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "12_Sol")
         {
          SolOn_12();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "13_Ra")
         {
            RaOn_13();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "14_Si")
         {
             SiOn_14();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "15_Do")
         {
            DoOn_15();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "16_Re")
         {
             ReOn_16();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
         if (col.gameObject.tag == "16_Re")
         {
             MiOn_17();
+            Destroy(gameObject);
+            Instantiate(collisionParticle, gameObject.transform.position, Quaternion.identity);
         }
 
     }

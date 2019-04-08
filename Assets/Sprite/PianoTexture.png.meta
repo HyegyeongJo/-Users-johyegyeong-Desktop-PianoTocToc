@@ -48,6 +48,12 @@ TextureImporter:
     21300086: Pillar
     21300088: Flower_01
     21300090: Flower_02
+    21300092: Life
+    21300094: S1
+    21300096: S2
+    21300098: S3
+    21300100: S4
+    21300102: PianoTexture_4S5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -257,10 +263,10 @@ TextureImporter:
       name: KEY
       rect:
         serializedVersion: 2
-        x: 1258
-        y: 1502
-        width: 124
-        height: 161
+        x: 1271
+        y: 1513
+        width: 97
+        height: 149
       alignment: 9
       pivot: {x: 0.4935452, y: 0.48484012}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1069,6 +1075,126 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8f2b2219c68884b0e9a350173de38edf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 3086
+        width: 261
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff8ae6cb34ae480393fab0d08ee898e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S1
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 3155
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14a674b85c444d40a40769a087a56f2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S2
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 3158
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831c94ef320934a988416ff75d728e03
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S3
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 3156
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f2f589dec2d4838a7e4aa2985f8309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S4
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 3156
+        width: 42
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6140308a4a440b09473dcd2076419f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PianoTexture_4S5
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 3156
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80634feaa417e4413af4ca1e3c7150a9
       vertices: []
       indices: 
       edges: []

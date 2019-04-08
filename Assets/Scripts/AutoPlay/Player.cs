@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public delegate void ClearMusicEventHandler();
+    public static event ClearMusicEventHandler ClearMusic = () => { };
+
     public TextAsset score;
     public AudioClip[] tones;
     public char[] keys;
@@ -31,11 +34,24 @@ public class Player : MonoBehaviour
         if (auto)
         {
             node = Mathf.FloorToInt(timer * BPM / 60) % play.Length;
+
+            Debug.Log("Node.Length" + node);
+            Debug.Log("Play.Length" + play.Length);
+
+            if (node == play.Length-1)
+            {
+            //    Debug.Log("CLEAR MUSIC!!!!!@@@#####");
+                ClearMusic();
+                auto = false;
+            }
+
+
             if (prev != node)
             {
                 prev = node;
                 Play(play[node]);
             }
+
         }
         else
         {
