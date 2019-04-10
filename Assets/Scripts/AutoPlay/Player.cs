@@ -35,8 +35,8 @@ public class Player : MonoBehaviour
         {
             node = Mathf.FloorToInt(timer * BPM / 60) % play.Length;
 
-            Debug.Log("Node.Length" + node);
-            Debug.Log("Play.Length" + play.Length);
+ //          Debug.Log("Node.Length" + node);
+ //          Debug.Log("Play.Length" + play.Length);
 
             if (node == play.Length-1)
             {

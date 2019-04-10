@@ -8,16 +8,42 @@ public class LevelManager : MonoBehaviour
 
     public GameObject level1;
     public GameObject level2;
-  //  public GameObject level3;
+    public GameObject level3;
+    public GameObject level4;
+    public GameObject level5;
 
 
     private void OnEnable()
     {
+        TF.Scene.Play.Started += StartPlay;
+        TF.Scene.Play.Updated += UpdatePlay;
+        TF.Scene.Play.Ended += EndedPlay;
+
         Player.ClearMusic += PlayerClearMusic;
     }
 
+    private void OnDisable()
+    {
+        TF.Scene.Play.Started -= StartPlay;
+        TF.Scene.Play.Updated -= UpdatePlay;
+        TF.Scene.Play.Ended -= EndedPlay;
 
-    private void Update()
+        Player.ClearMusic-= PlayerClearMusic;
+    }
+
+
+    void StartPlay()
+    {
+
+    }
+
+    void EndedPlay()
+    {
+
+    }
+
+
+    private void UpdatePlay()
     {
      if(level == 2)
         {
@@ -26,15 +52,30 @@ public class LevelManager : MonoBehaviour
         }
      if(level == 3)
         {
-
+            level2.SetActive(false);
+            level3.SetActive(true);
         }
-
+     if(level == 4)
+        {
+            level3.SetActive(false);
+            level4.SetActive(true);
+        }
+     if(level == 5)
+        {
+            level4.SetActive(false);
+            level5.SetActive(true);
+        }
+     if(level == 6)
+        {
+            TF.Scene.Proceed();
+        }
     }
+
 
     void PlayerClearMusic()
     {
         level += 1;
-        Debug.Log("LEVEL MANAGER~~~~");
+        Debug.Log("LEVEL~~~~" + level);
     }
 
 }
