@@ -5,6 +5,9 @@ using ToryUX;
 
 public class PlaySceneManager : MonoBehaviour
 {
+    public GameObject lightPillar;
+
+
     private void OnEnable()
     {
         TF.Scene.Play.Started += StartPlay;
@@ -22,6 +25,7 @@ public class PlaySceneManager : MonoBehaviour
     void StartPlay()
     {
         ToryUX.TitleUI.Hide();
+        lightPillar.SetActive(true);
     }
 
     void UpdatePlay()

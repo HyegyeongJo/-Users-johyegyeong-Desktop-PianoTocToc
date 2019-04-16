@@ -56,6 +56,9 @@ TextureImporter:
     21300102: PianoTexture_4S5
     21300104: _Bar
     21300106: Fish
+    21300108: FlowerWhite-01
+    21300110: FlowerWhite-02
+    21300112: FlowerWhite-03
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -1230,13 +1233,73 @@ TextureImporter:
         width: 69
         height: 194
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 774989cbbb07f498eb78cb9396a359b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlowerWhite-01
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 2900
+        width: 70
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75de8bf94dfdf4c05ad08874d70befe7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlowerWhite-02
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 2909
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1cbe1ae8febe4a63b24352a799b8a9b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlowerWhite-03
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 2345
+        width: 9
+        height: 518
+      alignment: 9
+      pivot: {x: 0.4995524, y: 0.00002497964}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13fc408fac82c445fbad2a83da9b1b96
       vertices: []
       indices: 
       edges: []

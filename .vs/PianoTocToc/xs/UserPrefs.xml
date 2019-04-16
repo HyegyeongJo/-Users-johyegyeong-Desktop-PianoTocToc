@@ -1,9 +1,5 @@
 ﻿<Properties StartupConfiguration="{1768D319-538C-1E62-F2D8-B1934A50E97E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Music Note/Accompaniment/Pond/PondAccompaniment_1.txt">
-    <Files>
-      <File FileName="Assets/Music Note/Accompaniment/Pond/PondAccompaniment_1.txt" Line="107" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
