@@ -8,30 +8,48 @@ public class Note : MonoBehaviour
     public float speed = 0.01f;
 
 
-
-
-    private void Start()
+    private void OnEnable()
     {
-
-        GetComponent<AudioSource>().clip = tone;
-
+        NoteCreator.ClearMusic += NoteSpeedUp;
 
     }
-
-    private void Update()
-    {
-        transform.Translate(0, -speed, 0);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "MainNoteDestroy") 
+        private void OnDisable()
         {
-            Destroy(this.gameObject, 1);
+            NoteCreator.ClearMusic -= NoteSpeedUp;
         }
-        //else
-        //{
-        //    GetComponent<AudioSource>().Play();
-        //}
-    }
+
+
+        private void Start()
+        {
+
+            GetComponent<AudioSource>().clip = tone;
+
+
+        }
+
+        private void Update()
+        {
+            transform.Translate(0, -speed, 0);
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.tag == "MainNoteDestroy")
+            {
+                Destroy(this.gameObject, 1);
+            }
+            //else
+            //{
+            //    GetComponent<AudioSource>().Play();
+            //}
+        }
+
+        void NoteSpeedUp()
+        {
+        Debug.Log("Speed Up~~~~~~~~~~~~");
+         speed += 0.5f;
+        }
+    
 }
+
+

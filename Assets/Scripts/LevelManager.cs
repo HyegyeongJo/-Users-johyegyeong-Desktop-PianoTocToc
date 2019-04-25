@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
         TF.Scene.Play.Updated += UpdatePlay;
         TF.Scene.Play.Ended += EndedPlay;
 
-        Player.ClearMusic += PlayerClearMusic;
+        NoteCreator.ClearMusic += PlayerClearMusic;
     }
 
     private void OnDisable()
@@ -28,7 +28,7 @@ public class LevelManager : MonoBehaviour
         TF.Scene.Play.Updated -= UpdatePlay;
         TF.Scene.Play.Ended -= EndedPlay;
 
-        Player.ClearMusic-= PlayerClearMusic;
+        NoteCreator.ClearMusic-= PlayerClearMusic;
     }
 
 
@@ -45,12 +45,17 @@ public class LevelManager : MonoBehaviour
 
     private void UpdatePlay()
     {
+      Debug.Log(level);
+
      if(level == 2)
         {
+          //  TF.Scene.Proceed();
+
             level1.SetActive(false);
             level2.SetActive(true);
+
         }
-     if(level == 3)
+        if (level == 3)
         {
             level2.SetActive(false);
             level3.SetActive(true);

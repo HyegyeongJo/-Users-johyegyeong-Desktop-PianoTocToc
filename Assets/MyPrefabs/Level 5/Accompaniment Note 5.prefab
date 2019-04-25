@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tone: {fileID: 0}
-  speed: 0.06
+  speed: 0.05
 --- !u!82 &6650984456435108149
 AudioSource:
   m_ObjectHideFlags: 0

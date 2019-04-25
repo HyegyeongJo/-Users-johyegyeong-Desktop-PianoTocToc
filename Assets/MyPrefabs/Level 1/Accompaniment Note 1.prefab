@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1766237285}
   - component: {fileID: 7098611448435472778}
   m_Layer: 0
-  m_Name: Accompaniment Note
+  m_Name: Accompaniment Note 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,6 +7,7 @@ public class Accompaniment_Player : MonoBehaviour
     public TextAsset score;
     public AudioClip[] tones;
     public char[] keys;
+    public Transform playerParent;
 
     public Transform start;
     public Accompaniment_Note note;
@@ -62,7 +63,7 @@ public class Accompaniment_Player : MonoBehaviour
             for (int i = 0; i < keys.Length; i++)
                 if (c == keys[i])
                 {
-                    GameObject n = GameObject.Instantiate(note.gameObject, start.position - Vector3.left * (note.transform.localScale.x / 2 * i), start.rotation);
+                    GameObject n = GameObject.Instantiate(note.gameObject, start.position - Vector3.left * (note.transform.localScale.x / 2 * i), start.rotation, playerParent);
                     n.name = tones[i].name;
                     n.GetComponent<Accompaniment_Note>().tone = tones[i];
                 }

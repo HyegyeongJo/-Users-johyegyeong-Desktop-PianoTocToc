@@ -53,7 +53,6 @@ public class TitleSceneManager : MonoBehaviour
     void StartTitle()
     {
         Score.Reset();
-        Debug.Log(TF.Scene.Title.StepIndex);
     }
 
     void UpdateTitle()

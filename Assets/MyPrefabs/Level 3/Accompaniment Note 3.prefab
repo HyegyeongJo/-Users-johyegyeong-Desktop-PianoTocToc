@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1766237285}
   - component: {fileID: 7098611448435472778}
   m_Layer: 0
-  m_Name: Accompaniment Note 2
+  m_Name: Accompaniment Note 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tone: {fileID: 0}
-  speed: 0.04
+  speed: 0.03
 --- !u!82 &6650984456435108149
 AudioSource:
   m_ObjectHideFlags: 0
