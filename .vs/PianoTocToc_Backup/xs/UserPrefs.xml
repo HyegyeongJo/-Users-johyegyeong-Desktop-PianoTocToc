@@ -1,12 +1,5 @@
 ﻿<Properties StartupConfiguration="{506620FD-62C7-CDEE-D537-966F89BBD5A1}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Music Note/Main Play/FuntorySong/FuntorySong_1.txt">
-    <Files>
-      <File FileName="Assets/Music Note/Main Play/FuntorySong/FuntorySong_1.txt" Line="147" Column="1" />
-      <File FileName="Assets/Music Note/Accompaniment/FuntorySong/FuntorySongAccompaniment_1.txt" Line="147" Column="1" />
-      <File FileName="Assets/Music Note/Main Play/FuntorySong/FuntorySong_2.txt" Line="155" Column="1" />
-      <File FileName="Assets/Music Note/Accompaniment/FuntorySong/FuntorySongAccompaniment_2.txt" Line="155" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
