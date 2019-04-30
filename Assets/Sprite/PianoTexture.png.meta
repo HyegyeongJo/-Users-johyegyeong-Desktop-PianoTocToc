@@ -59,6 +59,7 @@ TextureImporter:
     21300108: FlowerWhite-01
     21300110: FlowerWhite-02
     21300112: FlowerWhite-03
+    21300114: OrangeBg
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -1300,6 +1301,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 13fc408fac82c445fbad2a83da9b1b96
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangeBg
+      rect:
+        serializedVersion: 2
+        x: 2968
+        y: 1237
+        width: 1122
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a9d9136481b42c2b4fe0916c0ef007
       vertices: []
       indices: 
       edges: []
