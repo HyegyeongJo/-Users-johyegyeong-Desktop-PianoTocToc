@@ -5,8 +5,9 @@ using ToryUX;
 
 public class PianoKeyPressedEffect : MonoBehaviour
 {
-    public ParticleSystem[] pianoKeyPressedParticle; 
-    
+    public ParticleSystem[] pianoKeyPressedParticle;
+    public ParticleSystem[] incorrectParticle;
+
     private void OnEnable()
     {
         PianoKeyCollisionEvent.DoOn_1 += Play_1;
@@ -24,8 +25,23 @@ public class PianoKeyPressedEffect : MonoBehaviour
         PianoKeyCollisionEvent.RaOn_13 += Play_13;
         PianoKeyCollisionEvent.SiOn_14 += Play_14;
         PianoKeyCollisionEvent.DoOn_15 += Play_15;
-        PianoKeyCollisionEvent.ReOn_16 += Play_16;
-        PianoKeyCollisionEvent.MiOn_17 += Play_17;
+
+        PianoKeyCollisionEvent.IDo_1 += IPlay_1;
+        PianoKeyCollisionEvent.IRe_2 += IPlay_2;
+        PianoKeyCollisionEvent.IMi_3 += IPlay_3;
+        PianoKeyCollisionEvent.IFa_4 += IPlay_4;
+        PianoKeyCollisionEvent.ISol_5 += IPlay_5;
+        PianoKeyCollisionEvent.IRa_6 += IPlay_6;
+        PianoKeyCollisionEvent.ISi_7 += IPlay_7;
+        PianoKeyCollisionEvent.IDo_8 += IPlay_8;
+        PianoKeyCollisionEvent.IRe_9 += IPlay_9;
+        PianoKeyCollisionEvent.IMi_10 += IPlay_10;
+        PianoKeyCollisionEvent.IFa_11 += IPlay_11;
+        PianoKeyCollisionEvent.ISol_12 += IPlay_12;
+        PianoKeyCollisionEvent.IRa_13 += IPlay_13;
+        PianoKeyCollisionEvent.ISi_14 += IPlay_14;
+        PianoKeyCollisionEvent.IDo_15 += IPlay_15;
+
     }
 
     private void OnDisable()
@@ -45,8 +61,23 @@ public class PianoKeyPressedEffect : MonoBehaviour
         PianoKeyCollisionEvent.RaOn_13 -= Play_13;
         PianoKeyCollisionEvent.SiOn_14 -= Play_14;
         PianoKeyCollisionEvent.DoOn_15 -= Play_15;
-        PianoKeyCollisionEvent.ReOn_16 -= Play_16;
-        PianoKeyCollisionEvent.MiOn_17 -= Play_17;
+
+
+        PianoKeyCollisionEvent.IDo_1 -= IPlay_1;
+        PianoKeyCollisionEvent.IRe_2 -= IPlay_2;
+        PianoKeyCollisionEvent.IMi_3 -= IPlay_3;
+        PianoKeyCollisionEvent.IFa_4 -= IPlay_4;
+        PianoKeyCollisionEvent.ISol_5 -= IPlay_5;
+        PianoKeyCollisionEvent.IRa_6 -= IPlay_6;
+        PianoKeyCollisionEvent.ISi_7 -= IPlay_7;
+        PianoKeyCollisionEvent.IDo_8 -= IPlay_8;
+        PianoKeyCollisionEvent.IRe_9 -= IPlay_9;
+        PianoKeyCollisionEvent.IMi_10 -= IPlay_10;
+        PianoKeyCollisionEvent.IFa_11 -= IPlay_11;
+        PianoKeyCollisionEvent.ISol_12 -= IPlay_12;
+        PianoKeyCollisionEvent.IRa_13 -= IPlay_13;
+        PianoKeyCollisionEvent.ISi_14 -= IPlay_14;
+        PianoKeyCollisionEvent.IDo_15 -= IPlay_15;
     }
 
 
@@ -133,14 +164,82 @@ public class PianoKeyPressedEffect : MonoBehaviour
         pianoKeyPressedParticle[14].Play();
         Score.Gain(1);
     }
-    void Play_16()
+
+
+
+    void IPlay_1()
     {
-        pianoKeyPressedParticle[15].Play();
-        Score.Gain(1);
+        incorrectParticle[0].Play();
+        Score.Lose(1);
     }
-    void Play_17()
+    void IPlay_2()
     {
-        pianoKeyPressedParticle[16].Play();
-        Score.Gain(1);
+        incorrectParticle[1].Play();
+        Score.Lose(1);
+    }
+    void IPlay_3()
+    {
+        incorrectParticle[2].Play();
+        Score.Lose(1);
+    }
+    void IPlay_4()
+    {
+        incorrectParticle[3].Play();
+        Score.Lose(1);
+    }
+    void IPlay_5()
+    {
+        incorrectParticle[4].Play();
+        Score.Lose(1);
+    }
+    void IPlay_6()
+    {
+        incorrectParticle[5].Play();
+        Score.Lose(1);
+    }
+    void IPlay_7()
+    {
+        incorrectParticle[6].Play();
+        Score.Lose(1);
+    }
+    void IPlay_8()
+    {
+        incorrectParticle[7].Play();
+        Score.Lose(1);
+    }
+    void IPlay_9()
+    {
+        incorrectParticle[8].Play();
+        Score.Lose(1);
+    }
+    void IPlay_10()
+    {
+        incorrectParticle[9].Play();
+        Score.Lose(1);
+    }
+    void IPlay_11()
+    {
+        incorrectParticle[10].Play();
+        Score.Lose(1);
+    }
+    void IPlay_12()
+    {
+        incorrectParticle[11].Play();
+        Score.Lose(1);
+    }
+    void IPlay_13()
+    {
+        incorrectParticle[12].Play();
+        Score.Lose(1);
+    }
+    void IPlay_14()
+    {
+        incorrectParticle[13].Play();
+        Score.Lose(1);
+    }
+    void IPlay_15()
+    {
+        incorrectParticle[14].Play();
+        Score.Lose(1);
     }
 }

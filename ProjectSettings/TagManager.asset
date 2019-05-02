@@ -70,6 +70,21 @@ TagManager:
   - P_15
   - P_16
   - P_17
+  - 1_IDo
+  - 2_IRe
+  - 3_IMi
+  - 4_IFa
+  - 5_ISol
+  - 6_IRa
+  - 7_ISi
+  - 8_IDo
+  - 9_IRe
+  - 10_IMi
+  - 11_IFa
+  - 12_ISol
+  - 13_IRa
+  - 14_ISi
+  - 15_IDo
   layers:
   - Default
   - TransparentFX
