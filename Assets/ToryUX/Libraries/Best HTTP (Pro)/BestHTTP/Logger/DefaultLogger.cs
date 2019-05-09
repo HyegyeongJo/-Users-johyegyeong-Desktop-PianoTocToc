@@ -122,7 +122,7 @@ namespace BestHTTP.Logger
 
         private string GetFormattedTime()
         {
-            return DateTime.Now.ToLongTimeString();
+            return DateTime.Now.Ticks.ToString();
         }
     }
 }

@@ -1,3 +1,22 @@
+1.10.9 (2018.07.05)
+General
+-[Bugfix] Fixed a compile error under WebGL
+-[Improvement] HTTPRequest's GetEntityBody became public api
+-[Improvement] Added GetFormFields to HTTPRequest
+
+1.10.8 (2018.07.02)
+General
+-[Improvement] Greatly reduced the TCP packets that sent out for a HTTP request
+WebSocket
+-[Improvement] Frame downloading now isn't blocked while user code is executing on current completed frames
+SocketIO
+-[Bugfix] Implemented a new ToInt function instead of char.GetNumericValue as this later one throws an exception under WebGL using the new 4.x runtime
+SignalR Core
+-[Improvement] Fixed compile errors for WSA
+-[Improvement] Added HubOptions to be able to set more options
+-[Improvement] Now it's possible to skip the negotiation process and connect straigth with the (only) WebSocket protocol
+-[Bugfix] Authentication provider's PrepareRequest wasn't called on the negotiation request.
+
 1.10.7 (2018.06.05)
 General
 -[Improvement] Logger will log out time infromation too

@@ -65,8 +65,13 @@ namespace BestHTTP.SignalRCore.Transports
 
             if (this.webSocket == null)
             {
+                Uri baseUri = this.connection.Uri;
+
                 // If we received an Url in the negotiation result, we have to connect to that endpoint.
-                Uri uri = BuildUri(this.connection.NegotiationResult.Url ?? this.connection.Uri);
+                if (this.connection.NegotiationResult != null && this.connection.NegotiationResult.Url != null)
+                    baseUri = this.connection.NegotiationResult.Url;
+
+                Uri uri = BuildUri(baseUri);
 
                 // Also, if there's an authentication provider it can alter further our uri.
                 if (this.connection.AuthenticationProvider != null)
@@ -229,6 +234,9 @@ namespace BestHTTP.SignalRCore.Transports
 
         private Uri BuildUri(Uri baseUri)
         {
+            if (this.connection.NegotiationResult == null)
+                return baseUri;
+
             UriBuilder builder = new UriBuilder(baseUri);
             StringBuilder queryBuilder = new StringBuilder();
 

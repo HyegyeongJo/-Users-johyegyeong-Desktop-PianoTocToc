@@ -86,7 +86,11 @@ namespace BestHTTP.SignalRCore.Messages
                                 List<object> transferFormats = value as List<object>;
 
                                 if (transferFormats != null)
-                                    transferModes = transferFormats.ConvertAll(tf => tf.ToString());
+                                {
+                                    transferModes = new List<string>(transferFormats.Count);
+                                    foreach (var mode in transferFormats)
+                                        transferModes.Add(mode.ToString());
+                                }
                             }
 
                             supportedTransports.Add(new SupportedTransport(transportName, transferModes));

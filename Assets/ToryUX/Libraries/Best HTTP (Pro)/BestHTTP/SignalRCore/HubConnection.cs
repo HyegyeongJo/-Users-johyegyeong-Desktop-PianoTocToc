@@ -6,6 +6,20 @@ using System.Collections.Generic;
 
 namespace BestHTTP.SignalRCore
 {
+    public sealed class HubOptions
+    {
+        /// <summary>
+        /// When this is set to true, the plugin will skip the negotiation request if the PreferedTransport is
+        /// WebSocket.
+        /// </summary>
+        public bool SkipNegotiation { get; set; }
+
+        /// <summary>
+        /// The preferred transport to choose when more than one available.
+        /// </summary>
+        public TransportTypes PreferedTransport { get; set; }
+    }
+
     public sealed class HubConnection
     {
         public static readonly object[] EmptyArgs = new object[0];
@@ -19,11 +33,6 @@ namespace BestHTTP.SignalRCore
         /// Current state of this connection.
         /// </summary>
         public ConnectionStates State { get; private set; }
-
-        /// <summary>
-        /// The preferred transport to choose.
-        /// </summary>
-        public TransportTypes PreferedTransport { get; private set; }
 
         /// <summary>
         /// Current, active ITransport instance.
@@ -67,6 +76,11 @@ namespace BestHTTP.SignalRCore
         public NegotiationResult NegotiationResult { get; private set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public HubOptions Options { get; private set; }
+
+        /// <summary>
         /// This will be increment to add a unique id to every message the plugin will send.
         /// </summary>
         private long lastInvocationId = 0;
@@ -83,15 +97,15 @@ namespace BestHTTP.SignalRCore
         private Dictionary<string, Subscription> subscriptions = new Dictionary<string, Subscription>(StringComparer.OrdinalIgnoreCase);
 
         public HubConnection(Uri hubUri, IProtocol protocol)
-            : this(hubUri, protocol, TransportTypes.WebSocket)
+            : this(hubUri, protocol, new HubOptions())
         {
         }
 
-        public HubConnection(Uri hubUri, IProtocol protocol, TransportTypes preferedTransport)
+        public HubConnection(Uri hubUri, IProtocol protocol, HubOptions options)
         {
             this.Uri = hubUri;
             this.State = ConnectionStates.Initial;
-            this.PreferedTransport = preferedTransport;
+            this.Options = options;
             this.Protocol = protocol;
             this.Protocol.Connection = this;
         }
@@ -142,6 +156,14 @@ namespace BestHTTP.SignalRCore
         {
             HTTPManager.Logger.Verbose("HubConnection", "StartNegotiation");
 
+            if (this.Options.SkipNegotiation)
+            {
+                HTTPManager.Logger.Verbose("HubConnection", "Skipping negotiation");
+                ConnectImpl();
+
+                return;
+            }
+
             if (this.State == ConnectionStates.CloseInitiated)
             {
                 SetState(ConnectionStates.Closed);
@@ -156,18 +178,20 @@ namespace BestHTTP.SignalRCore
             UriBuilder builder = new UriBuilder(this.Uri);
             builder.Path += "/negotiate";
 
-            new HTTPRequest(builder.Uri, HTTPMethods.Post, OnNegotiationRequestFinished)
-                .Send();
+            var request = new HTTPRequest(builder.Uri, HTTPMethods.Post, OnNegotiationRequestFinished);
+            if (this.AuthenticationProvider != null)
+                this.AuthenticationProvider.PrepareRequest(request);
+            request.Send();
         }
         
         private void ConnectImpl()
         {
             HTTPManager.Logger.Verbose("HubConnection", "ConnectImpl");
 
-            switch (this.PreferedTransport)
+            switch (this.Options.PreferedTransport)
             {
                 case TransportTypes.WebSocket:
-                    if (!IsTransportSupported("WebSockets"))
+                    if (this.NegotiationResult != null && !IsTransportSupported("WebSockets"))
                     {
                         SetState(ConnectionStates.Closed, "The 'WebSockets' transport isn't supported by the server!");
                         return;
@@ -175,6 +199,10 @@ namespace BestHTTP.SignalRCore
 
                     this.Transport = new Transports.WebSocketTransport(this);
                     this.Transport.OnStateChanged += Transport_OnStateChanged;
+                    break;
+
+                default:
+                    SetState(ConnectionStates.Closed, "Unsupportted transport: " + this.Options.PreferedTransport);
                     break;
             }
 

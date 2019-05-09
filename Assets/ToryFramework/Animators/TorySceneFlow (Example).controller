@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   first: 1
   loadUnityScene: 1
-  unitySceneIndex: 0
+  unitySceneIndex: 1
   stageCount: 1
 --- !u!114 &114519222387915636
 MonoBehaviour:
