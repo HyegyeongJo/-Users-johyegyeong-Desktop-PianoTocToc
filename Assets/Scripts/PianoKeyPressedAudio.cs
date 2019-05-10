@@ -112,14 +112,6 @@ public class PianoKeyPressedAudio : MonoBehaviour
         {
             player.PlayOneShot(notes[14]);
         }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            player.PlayOneShot(notes[15]);
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            player.PlayOneShot(notes[16]);
-        }
     }
 
     void PlayWithNativeAudio()
@@ -183,14 +175,6 @@ public class PianoKeyPressedAudio : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.O))
         {
             controllers[0] = PlayWithNativeAudio(pointers[14]);
-        }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            controllers[0] = PlayWithNativeAudio(pointers[15]);
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            controllers[0] = PlayWithNativeAudio(pointers[16]);
         }
     }
 

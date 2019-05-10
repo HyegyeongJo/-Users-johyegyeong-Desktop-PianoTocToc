@@ -212,16 +212,6 @@ public class PianoKeyPressedOnObj : MonoBehaviour
             musicalScaleCube[14].SetActive(false);
             flowerCollider[14].SetActive(false);
         }
-        if (Input.GetKeyUp(KeyCode.P))
-        {
-            musicalScaleCube[15].SetActive(false);
-            flowerCollider[15].SetActive(false);
-        }
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            musicalScaleCube[16].SetActive(false);
-            flowerCollider[16].SetActive(false);
-        }
     }
 
 
