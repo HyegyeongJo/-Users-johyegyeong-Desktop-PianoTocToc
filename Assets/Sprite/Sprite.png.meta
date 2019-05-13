@@ -22,6 +22,22 @@ TextureImporter:
     21300034: 15_Do
     21300036: Collision Line
     21300038: FreeModeBg
+    21300040: Note-4
+    21300042: Note-1
+    21300044: Note-2
+    21300046: Note-3
+    21300048: Outline_1
+    21300050: Outline_2
+    21300052: Outline3
+    21300054: Outline-4
+    21300056: Fill-1
+    21300058: Fill-2
+    21300060: Fill-3
+    21300062: Fill-4
+    21300064: Rest-1
+    21300066: Rest-4
+    21300068: Rest-3
+    21300070: Rest-2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -543,6 +559,326 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 43359d34beeb243c494cb0b32102a2e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Note-4
+      rect:
+        serializedVersion: 2
+        x: 2813
+        y: 1153
+        width: 76
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade5f46cc40c24703a307f8797f2ad3b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Note-1
+      rect:
+        serializedVersion: 2
+        x: 2908
+        y: 1142
+        width: 87
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94497e0cfc1814513870604003d8df80
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Note-2
+      rect:
+        serializedVersion: 2
+        x: 3006
+        y: 1137
+        width: 82
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf32ef958670a4572960bd3e006e071a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Note-3
+      rect:
+        serializedVersion: 2
+        x: 3131
+        y: 1135
+        width: 96
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385359a7ebfa64587b72a999ded0ea19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outline_1
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 1136
+        width: 124
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb401527422e4a85ab9cdcb4a0cadf5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outline_2
+      rect:
+        serializedVersion: 2
+        x: 3428
+        y: 1139
+        width: 125
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac57bb109e1eb4cb78c5076e7651229c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outline3
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 998
+        width: 125
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a4e871c9646469d9d8afdcb3c9f249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outline-4
+      rect:
+        serializedVersion: 2
+        x: 3428
+        y: 998
+        width: 123
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3ac4c9cbc7d4c1ea3537baaa53b82a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fill-1
+      rect:
+        serializedVersion: 2
+        x: 3607
+        y: 1144
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2961e442c1bef47d483f3059e5a534d7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fill-2
+      rect:
+        serializedVersion: 2
+        x: 3752
+        y: 1144
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be0a145f4b474b41acb60b1c8270e47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fill-3
+      rect:
+        serializedVersion: 2
+        x: 3607
+        y: 998
+        width: 110
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a0da413a5734e189a23013347d3b62
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fill-4
+      rect:
+        serializedVersion: 2
+        x: 3752
+        y: 998
+        width: 110
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300e87dd0a7b34f88a1173e4717ca2f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rest-1
+      rect:
+        serializedVersion: 2
+        x: 2661
+        y: 988
+        width: 85
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92daa341b71ba42e488ddb4fcdc1fad5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rest-4
+      rect:
+        serializedVersion: 2
+        x: 2643
+        y: 893
+        width: 108
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3c01d7cab31448aa9c3d8624a43107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rest-3
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 1036
+        width: 121
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f952828cfe4dc4ab79751c476aba4c7d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rest-2
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 1041
+        width: 108
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90779e410ec744500b8236f8ab20dfed
       vertices: []
       indices: 
       edges: []
