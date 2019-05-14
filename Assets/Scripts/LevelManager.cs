@@ -80,7 +80,6 @@ public class LevelManager : MonoBehaviour
     void PlayerClearMusic()
     {
         level += 1;
-        Debug.Log("LEVEL~~~~" + level);
     }
 
 }

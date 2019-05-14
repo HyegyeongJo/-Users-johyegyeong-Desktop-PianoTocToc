@@ -5,6 +5,8 @@ using ToryUX;
 
 public class ResultSceneManager : MonoBehaviour
 {
+    public GameObject[] stageLevelManager;
+
     private void OnEnable()
     {
         TF.Scene.Result.Started += StartResult;
@@ -26,6 +28,11 @@ public class ResultSceneManager : MonoBehaviour
     {
         ResultUI.Show();
         Score.HideUI();
+
+        for (int i = 0; i < stageLevelManager.Length; i++)
+        {
+            stageLevelManager[i].SetActive(false);
+        }
     }
 
     void UpdateResult()

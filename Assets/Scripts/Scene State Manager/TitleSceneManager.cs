@@ -17,10 +17,10 @@ public class TitleSceneManager : MonoBehaviour
     public GameObject funtorySonge_5;
     public GameObject freeMode_6;
 
-
     public GameObject[] stageBalloon;
     int stageNum = 0;
-   // public GameObject scene_02;
+
+    public GameObject lifeManager;
 
     private void OnEnable()
     {
@@ -69,6 +69,7 @@ public class TitleSceneManager : MonoBehaviour
         Score.ShowUI();
 
         TF.Scene.Proceed();
+        lifeManager.SetActive(true);
     }
 
     void SpiderClearEvent()
@@ -80,6 +81,7 @@ public class TitleSceneManager : MonoBehaviour
         Score.ShowUI();
 
         TF.Scene.Proceed();
+        lifeManager.SetActive(true);
     }
 
     void RabbitClearEvent()
@@ -91,6 +93,7 @@ public class TitleSceneManager : MonoBehaviour
         Score.ShowUI();
 
         TF.Scene.Proceed();
+        lifeManager.SetActive(true);
     }
 
     void BearClearEvent()
@@ -102,6 +105,7 @@ public class TitleSceneManager : MonoBehaviour
         Score.ShowUI();
 
         TF.Scene.Proceed();
+        lifeManager.SetActive(true);
     }
 
     void FuntoryClearEvent()
@@ -113,6 +117,7 @@ public class TitleSceneManager : MonoBehaviour
         Score.ShowUI();
 
         TF.Scene.Proceed();
+        lifeManager.SetActive(true);
     }
 
     void FreeClearEvent()

@@ -6,7 +6,6 @@ using ToryUX;
 public class PlaySceneManager : MonoBehaviour
 {
     public GameObject lightPillar;
-    public GameObject lifeManager;
 
     private void OnEnable()
     {
@@ -26,7 +25,6 @@ public class PlaySceneManager : MonoBehaviour
     {
         ToryUX.TitleUI.Hide();
         lightPillar.SetActive(true);
-        lifeManager.SetActive(true);
     }
 
     void UpdatePlay()

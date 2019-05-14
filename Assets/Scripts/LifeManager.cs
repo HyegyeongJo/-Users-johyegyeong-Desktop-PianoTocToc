@@ -4,9 +4,26 @@ using UnityEngine;
 
 public class LifeManager : MonoBehaviour
 {
-    public GameObject[] circleFill;
+    public delegate void LifeManagerEventHandler();
+    public static event LifeManagerEventHandler LoseLifeNum1 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum2 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum3 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum4 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum5 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum6 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum7 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum8 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum9 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum10 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum11 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum12 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum13 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum14 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum15 = () => { };
+    public static event LifeManagerEventHandler LoseLifeNum16 = () => { };
+
+    public GameObject[] gauageFill;
     public GameObject[] noteSign;
-    public GameObject[] restSign;
 
     int loseLifeNum;
 
@@ -65,7 +82,6 @@ public class LifeManager : MonoBehaviour
 
     private void UpdatePlay()
     {
-
     }
 
     private void EndedPlay()
@@ -79,99 +95,106 @@ public class LifeManager : MonoBehaviour
 
         if(loseLifeNum == 1)
         {
-            circleFill[0].SetActive(false);
-            noteSign[0].SetActive(false);
-            noteSign[1].SetActive(true);
+            gauageFill[0].SetActive(false);
+            LoseLifeNum1();
         }
         if (loseLifeNum == 2)
         {
-            circleFill[1].SetActive(false);
-            noteSign[1].SetActive(false);
-            noteSign[2].SetActive(true);
+            gauageFill[1].SetActive(false);
+            LoseLifeNum2();
         }
         if (loseLifeNum == 3)
         {
-            circleFill[2].SetActive(false);
-            noteSign[2].SetActive(false);
-            noteSign[3].SetActive(true);
+            gauageFill[2].SetActive(false);
+            LoseLifeNum3();
         }
         if (loseLifeNum == 4)
         {
-            circleFill[3].SetActive(false);
-            noteSign[3].SetActive(false);
-            noteSign[4].SetActive(true);
+            gauageFill[3].SetActive(false);
+            LoseLifeNum4();
         }
         if (loseLifeNum == 5)
         {
-            circleFill[4].SetActive(false);
-            noteSign[4].SetActive(false);
-            noteSign[5].SetActive(true);
+            gauageFill[4].SetActive(false);
+            LoseLifeNum5();
         }
         if (loseLifeNum == 6)
         {
-            circleFill[5].SetActive(false);
-            noteSign[5].SetActive(false);
-            noteSign[6].SetActive(true);
+            gauageFill[5].SetActive(false);
+            LoseLifeNum6();
         }
         if (loseLifeNum == 7)
         {
-            circleFill[6].SetActive(false);
-            noteSign[6].SetActive(false);
-            noteSign[7].SetActive(true);
+            gauageFill[6].SetActive(false);
+            LoseLifeNum7();
         }
         if (loseLifeNum == 8)
         {
-            circleFill[7].SetActive(false);
-            noteSign[7].SetActive(false);
+            gauageFill[7].SetActive(false);
+            noteSign[0].SetActive(false);
+            noteSign[1].SetActive(true);
+            LoseLifeNum8();
         }
 
         if (loseLifeNum == 9)
         {
-            circleFill[8].SetActive(false);
-            restSign[0].SetActive(false);
-            restSign[1].SetActive(true);
+            gauageFill[8].SetActive(false);
+            noteSign[1].SetActive(true);
+
+            LoseLifeNum9();
         }
         if (loseLifeNum == 10)
         {
-            circleFill[9].SetActive(false);
-            restSign[1].SetActive(false);
-            restSign[2].SetActive(true);
+            gauageFill[9].SetActive(false);
+            noteSign[1].SetActive(true);
+
+            LoseLifeNum10();
         }
         if (loseLifeNum == 11)
         {
-            circleFill[10].SetActive(false);
-            restSign[2].SetActive(false);
-            restSign[3].SetActive(true);
+            gauageFill[10].SetActive(false);
+            noteSign[1].SetActive(true);
+
+            LoseLifeNum11();
         }
         if (loseLifeNum == 12)
         {
-            circleFill[11].SetActive(false);
-            restSign[3].SetActive(false);
-            restSign[4].SetActive(true);
+            gauageFill[11].SetActive(false);
+            noteSign[1].SetActive(false);
+            noteSign[2].SetActive(true);
+            LoseLifeNum12();
+
         }
         if (loseLifeNum == 13)
         {
-            circleFill[12].SetActive(false);
-            restSign[4].SetActive(false);
-            restSign[5].SetActive(true);
+            gauageFill[12].SetActive(false);
+            noteSign[2].SetActive(true);
+            LoseLifeNum13();
+
         }
         if (loseLifeNum == 14)
         {
-            circleFill[13].SetActive(false);
-            restSign[5].SetActive(false);
-            restSign[6].SetActive(true);
+            gauageFill[13].SetActive(false);
+            noteSign[2].SetActive(false);
+            noteSign[3].SetActive(true);
+            LoseLifeNum14();
+
         }
         if (loseLifeNum == 15)
         {
-            circleFill[14].SetActive(false);
-            restSign[6].SetActive(false);
-            restSign[7].SetActive(true);
+            gauageFill[14].SetActive(false);
+            noteSign[3].SetActive(false);
+            noteSign[4].SetActive(true);
+            LoseLifeNum15();
+
         }
         if (loseLifeNum == 16)
         {
-            circleFill[15].SetActive(false);
-            restSign[7].SetActive(false);
+            gauageFill[15].SetActive(false);
+            noteSign[4].SetActive(false);
+
             TF.Scene.Proceed();
+            LoseLifeNum16();
         }
     }
 }
