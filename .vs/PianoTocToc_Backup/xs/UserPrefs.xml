@@ -1,16 +1,5 @@
 ﻿<Properties StartupConfiguration="{506620FD-62C7-CDEE-D537-966F89BBD5A1}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scene State Manager/TitleSceneManager.cs">
-    <Files>
-      <File FileName="Assets/Scripts/LifeManager.cs" Line="151" Column="26" />
-      <File FileName="Assets/Scripts/LightPillarEvent.cs" Line="8" Column="81" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="9" Column="29" />
-      <File FileName="Assets/Scripts/Scene State Manager/PlaySceneManager.cs" Line="30" Column="6" />
-      <File FileName="Assets/Scripts/Scene State Manager/ResultSceneManager.cs" Line="15" Column="51" />
-      <File FileName="Assets/Scripts/Life Manager Particle/LifeManagerParticle.cs" Line="33" Column="21" />
-      <File FileName="Assets/Scripts/TitleAnimation.cs" Line="245" Column="26" />
-      <File FileName="Assets/Scripts/Scene State Manager/TitleSceneManager.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />

@@ -20,7 +20,8 @@ namespace Cryptonite
     public enum Type
     {
         Cryptonite = 0,         // Cryptonite Component
-        Crypton = 1             // Crypton License Server
+        Crypton = 1,            // Crypton License Server
+        Evaluation = 2          // Evaluation License. Limited time.
     }
 
     public class Cryptonite : MonoBehaviour
@@ -72,28 +73,62 @@ namespace Cryptonite
 
         void Start()
         {
-            // Race between Activation vs Expiration
-            StartCoroutine(Activate());                 // Go!
-            expiration = StartCoroutine(Expire());      // Go!
-
-            // OTP Checksum
-            OTP = gameObject.AddComponent<OTPAuthenticator>();
-            OTP.OnPropertyChanged += new OTPAuthenticator.PropertyChanged(OTPCallBack);
-            OTP.Identity = "admin@envisible.com";
-            OTP.Secret = OTP.StringToBytes(secret);
-
-            if (type == Type.Crypton)           // Source
+            if(type == Type.Evaluation)
             {
-                OSC_OUT = gameObject.AddComponent<OscOut>();
-                OSC_OUT.Open(port);
+                StartCoroutine(Evaluate());
             }
-            else if (type == Type.Cryptonite)   // Checker
+            else
             {
-                OSC_IN = gameObject.AddComponent<OscIn>();
-                OSC_IN.Open(port);
-                OSC_IN.Map(address, Receive);
-            }
+                // Race between Activation vs Expiration
+                StartCoroutine(Activate());                 // Go!
+                expiration = StartCoroutine(Expire());      // Go!
 
+                // OTP Checksum
+                OTP = gameObject.AddComponent<OTPAuthenticator>();
+                OTP.OnPropertyChanged += new OTPAuthenticator.PropertyChanged(OTPCallBack);
+                OTP.Identity = "admin@envisible.com";
+                OTP.Secret = OTP.StringToBytes(secret);
+
+                if (type == Type.Crypton)           // Source
+                {
+                    OSC_OUT = gameObject.AddComponent<OscOut>();
+                    OSC_OUT.Open(port);
+                }
+                else if (type == Type.Cryptonite)   // Checker
+                {
+                    OSC_IN = gameObject.AddComponent<OscIn>();
+                    OSC_IN.Open(port);
+                    OSC_IN.Map(address, Receive);
+                }
+            }
+        }
+        #endregion
+
+        #region Self Destruction
+        IEnumerator Evaluate()
+        {
+            #if UNITY_EDITOR
+            EditorApplication.Beep();
+            #endif
+
+			GetComponent<Camera>().enabled = false;
+			textMesh.GetComponent<MeshRenderer>().enabled = false;
+
+			textMesh.color = new Color(1f, 0.5f, 0.25f);
+            status = "Evaluation License\n";
+
+            yield return new WaitForSeconds(3);
+            DontDestroyOnLoad(this.gameObject);
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
+        
+            // Quitting in 5 minutes
+            int t = 5 * 60;
+            while(t-- > 0)
+            {
+                yield return new WaitForSeconds(1);
+                Debug.Log("Evaluation license ending in " + t + "seconds.");
+            }
+            Application.Quit();
         }
         #endregion
 
