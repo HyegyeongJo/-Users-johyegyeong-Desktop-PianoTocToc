@@ -60,6 +60,11 @@ TextureImporter:
     21300110: FlowerWhite-02
     21300112: FlowerWhite-03
     21300114: OrangeBg
+    21300116: arm1
+    21300118: arm2
+    21300120: PianoTexture_0
+    21300122: PianoTexture_1
+    21300124: PianoTexture_2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -335,7 +340,7 @@ TextureImporter:
         height: 1925
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 781, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -781,26 +786,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 394f903458df54d858ecbdd476f33264
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Singer
-      rect:
-        serializedVersion: 2
-        x: 58
-        y: 524
-        width: 501
-        height: 710
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 473681a9211b84aa9801761a517a4bda
       vertices: []
       indices: 
       edges: []
@@ -1314,13 +1299,133 @@ TextureImporter:
         width: 1122
         height: 650
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 57a9d9136481b42c2b4fe0916c0ef007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Singer
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 392
+        width: 464
+        height: 644
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5257027e3595f4a0fa570df117f0f42a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arm1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1050
+        width: 126
+        height: 179
+      alignment: 9
+      pivot: {x: 0.86133856, y: 0.19783916}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5436f9b03c64b06ae114b06924b54b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arm2
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1053
+        width: 153
+        height: 176
+      alignment: 9
+      pivot: {x: 0.45972678, y: 0.84621084}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294b3aa92b66a49f88e16268b1c78ab6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PianoTexture_0
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 150
+        width: 1123
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a802ccb9564b474e94806062c499775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PianoTexture_1
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 463
+        width: 375
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb2ee5826ee84e29bb192d9a9cf8632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PianoTexture_2
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 481
+        width: 408
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2763546e5ad84d2aa161f5d8ac88a07
       vertices: []
       indices: 
       edges: []
