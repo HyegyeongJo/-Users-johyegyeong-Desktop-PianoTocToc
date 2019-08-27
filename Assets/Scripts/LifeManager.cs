@@ -22,10 +22,11 @@ public class LifeManager : MonoBehaviour
     public static event LifeManagerEventHandler LoseLifeNum15 = () => { };
     public static event LifeManagerEventHandler LoseLifeNum16 = () => { };
 
-    public GameObject[] gauageFill;
     public GameObject[] noteSign;
 
     int loseLifeNum;
+
+    [SerializeField] Animator lifeBarAnim;
 
     private void OnEnable()
     {
@@ -78,6 +79,7 @@ public class LifeManager : MonoBehaviour
     private void StartPlay()
     {
         loseLifeNum = 0;
+        lifeBarAnim = GetComponent<Animator>();
     }
 
     private void UpdatePlay()
@@ -95,42 +97,42 @@ public class LifeManager : MonoBehaviour
 
         if(loseLifeNum == 1)
         {
-            gauageFill[0].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife1");
             LoseLifeNum1();
         }
         if (loseLifeNum == 2)
         {
-            gauageFill[1].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife2");
             LoseLifeNum2();
         }
         if (loseLifeNum == 3)
         {
-            gauageFill[2].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife3");
             LoseLifeNum3();
         }
         if (loseLifeNum == 4)
         {
-            gauageFill[3].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife4");
             LoseLifeNum4();
         }
         if (loseLifeNum == 5)
         {
-            gauageFill[4].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife5");
             LoseLifeNum5();
         }
         if (loseLifeNum == 6)
         {
-            gauageFill[5].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife6");
             LoseLifeNum6();
         }
         if (loseLifeNum == 7)
         {
-            gauageFill[6].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife7");
             LoseLifeNum7();
         }
         if (loseLifeNum == 8)
         {
-            gauageFill[7].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife8");
             noteSign[0].SetActive(false);
             noteSign[1].SetActive(true);
             LoseLifeNum8();
@@ -138,28 +140,28 @@ public class LifeManager : MonoBehaviour
 
         if (loseLifeNum == 9)
         {
-            gauageFill[8].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife9");
             noteSign[1].SetActive(true);
 
             LoseLifeNum9();
         }
         if (loseLifeNum == 10)
         {
-            gauageFill[9].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife10");
             noteSign[1].SetActive(true);
 
             LoseLifeNum10();
         }
         if (loseLifeNum == 11)
         {
-            gauageFill[10].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife11");
             noteSign[1].SetActive(true);
 
             LoseLifeNum11();
         }
         if (loseLifeNum == 12)
         {
-            gauageFill[11].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife12");
             noteSign[1].SetActive(false);
             noteSign[2].SetActive(true);
             LoseLifeNum12();
@@ -167,14 +169,14 @@ public class LifeManager : MonoBehaviour
         }
         if (loseLifeNum == 13)
         {
-            gauageFill[12].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife13");
             noteSign[2].SetActive(true);
             LoseLifeNum13();
 
         }
         if (loseLifeNum == 14)
         {
-            gauageFill[13].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife14");
             noteSign[2].SetActive(false);
             noteSign[3].SetActive(true);
             LoseLifeNum14();
@@ -182,7 +184,7 @@ public class LifeManager : MonoBehaviour
         }
         if (loseLifeNum == 15)
         {
-            gauageFill[14].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife15");
             noteSign[3].SetActive(false);
             noteSign[4].SetActive(true);
             LoseLifeNum15();
@@ -190,7 +192,7 @@ public class LifeManager : MonoBehaviour
         }
         if (loseLifeNum == 16)
         {
-            gauageFill[15].SetActive(false);
+            lifeBarAnim.SetTrigger("LoseLife16");
             noteSign[4].SetActive(false);
 
             TF.Scene.Proceed();

@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class LifeManagerParticle : MonoBehaviour
 {
-    public ParticleSystem[] gauageFillParticle;
     public ParticleSystem noteSignParticle;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < gauageFillParticle.Length; i++)
-        {
-            gauageFillParticle[i].GetComponent<ParticleSystem>();
-        }
-        
         noteSignParticle.GetComponent<ParticleSystem>();
-
     }
 
     private void OnEnable()
@@ -61,79 +54,55 @@ public class LifeManagerParticle : MonoBehaviour
 
     void CircleParticle_1()
     {
-        gauageFillParticle[0].Play();
     }
     void CircleParticle_2()
     {
-        gauageFillParticle[1].Play();
     }
     void CircleParticle_3()
     {
-        gauageFillParticle[2].Play();
-
     }
     void CircleParticle_4()
     {
-        gauageFillParticle[3].Play();
-
     }
     void CircleParticle_5()
     {
-        gauageFillParticle[4].Play();
-
     }
     void CircleParticle_6()
     {
-        gauageFillParticle[5].Play();
-
     }
     void CircleParticle_7()
     {
-        gauageFillParticle[6].Play();
-
     }
     void CircleParticle_8()
     {
-        gauageFillParticle[7].Play();
         noteSignParticle.Play();
     }
     void CircleParticle_9()
     {
-        gauageFillParticle[8].Play();
-
     }
     void CircleParticle_10()
     {
-        gauageFillParticle[9].Play();
-
     }
     void CircleParticle_11()
     {
-        gauageFillParticle[10].Play();
-
     }
     void CircleParticle_12()
     {
-        gauageFillParticle[11].Play();
         noteSignParticle.Play();
     }
     void CircleParticle_13()
     {
-        gauageFillParticle[12].Play();
     }
     void CircleParticle_14()
     {
-        gauageFillParticle[13].Play();
         noteSignParticle.Play();
     }
     void CircleParticle_15()
     {
-        gauageFillParticle[14].Play();
         noteSignParticle.Play();
     }
     void CircleParticle_16()
     {
-        gauageFillParticle[15].Play();
     }
 
 }
