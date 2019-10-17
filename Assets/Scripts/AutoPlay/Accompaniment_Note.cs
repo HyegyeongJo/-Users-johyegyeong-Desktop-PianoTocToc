@@ -5,7 +5,7 @@ using UnityEngine;
 public class Accompaniment_Note : MonoBehaviour
 {
     public AudioClip tone;
-    public float speed = 0.01f;
+    float speed = 0.025f;
 
     private void Start()
     {

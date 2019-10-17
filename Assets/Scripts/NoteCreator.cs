@@ -65,7 +65,7 @@ public class NoteCreator : MonoBehaviour
             for (int i = 0; i < keys.Length; i++)
                 if (c == keys[i])
                 {
-                 GameObject n = Instantiate(note.gameObject, start.position - Vector3.left * (note.transform.localScale.x * i * .295f), start.rotation);
+                 GameObject n = Instantiate(note.gameObject, start.position - Vector3.left * (note.transform.localScale.x * i * .3f), start.rotation);
                     n.name = tones[i].name;
                     n.GetComponent<Note>().tone = tones[i];
                 }

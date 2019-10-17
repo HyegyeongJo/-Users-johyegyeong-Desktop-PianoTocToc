@@ -15,7 +15,7 @@ public class CheckScreenPoint : MonoBehaviour
     public Transform noteParent;
 
     float[] notePose;
-
+    [SerializeField] float verticalSpace;
     //void OnDrawGizmosSelected()
     //{
     //    Vector3 p = verticalSpaceCam.ScreenToWorldPoint(new Vector3(0, 0, verticalSpaceCam.nearClipPlane));
@@ -43,23 +43,23 @@ public class CheckScreenPoint : MonoBehaviour
         Instantiate(collisionLine, new Vector3(0, -1.5f, 10f), Quaternion.identity);
 
         float noteSpace = verticalSpaceCam.pixelWidth / note.Length;
-        float noteHeight = 0-(verticalSpaceCam.pixelHeight/10f);
+        float noteHeight =  /*0-(verticalSpaceCam.pixelHeight/10f)*/ -1110f;
 
-        float notePosX1 = ((noteSpace * 2) - noteSpace) * 0.5f;
-        float notePosX2 = ((noteSpace * 4) - noteSpace) * 0.5f;
-        float notePosX3 = ((noteSpace * 6) - noteSpace) * 0.5f;
-        float notePosX4 = ((noteSpace * 8) - noteSpace) * 0.5f;
-        float notePosX5 = ((noteSpace * 10) - noteSpace) * 0.5f;
-        float notePosX6 = ((noteSpace * 12) - noteSpace) * 0.5f;
-        float notePosX7 = ((noteSpace * 14) - noteSpace) * 0.5f;
-        float notePosX8 = ((noteSpace * 16) - noteSpace) * 0.5f;
-        float notePosX9 = ((noteSpace * 18) - noteSpace) * 0.5f;
-        float notePosX10 = ((noteSpace * 20) - noteSpace) * 0.5f;
-        float notePosX11 = ((noteSpace * 22) - noteSpace) * 0.5f;
-        float notePosX12 = ((noteSpace * 24) - noteSpace) * 0.5f;
-        float notePosX13 = ((noteSpace * 26) - noteSpace) * 0.5f;
-        float notePosX14 = ((noteSpace * 28) - noteSpace) * 0.5f;
-        float notePosX15 = ((noteSpace * 30) - noteSpace) * 0.5f;
+        float notePosX1 = ((noteSpace * 2) - noteSpace) * verticalSpace;
+        float notePosX2 = ((noteSpace * 4) - noteSpace) * verticalSpace;
+        float notePosX3 = ((noteSpace * 6) - noteSpace) * verticalSpace;
+        float notePosX4 = ((noteSpace * 8) - noteSpace) * verticalSpace;
+        float notePosX5 = ((noteSpace * 10) - noteSpace) * verticalSpace;
+        float notePosX6 = ((noteSpace * 12) - noteSpace) * verticalSpace;
+        float notePosX7 = ((noteSpace * 14) - noteSpace) * verticalSpace;
+        float notePosX8 = ((noteSpace * 16) - noteSpace) * verticalSpace;
+        float notePosX9 = ((noteSpace * 18) - noteSpace) * verticalSpace;
+        float notePosX10 = ((noteSpace * 20) - noteSpace) * verticalSpace;
+        float notePosX11 = ((noteSpace * 22) - noteSpace) * verticalSpace;
+        float notePosX12 = ((noteSpace * 24) - noteSpace) * verticalSpace;
+        float notePosX13 = ((noteSpace * 26) - noteSpace) * verticalSpace;
+        float notePosX14 = ((noteSpace * 28) - noteSpace) * verticalSpace;
+        float notePosX15 = ((noteSpace * 30) - noteSpace) * verticalSpace;
 
         Instantiate(verticalAxis, (verticalSpaceCam.ScreenToWorldPoint(new Vector3 (0f, 0f, 10f))), Quaternion.identity, verticalAxisParent);
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Note : MonoBehaviour
 {
     public AudioClip tone;
-    public float speed = 0.01f;
+    float speed = 0.025f;
 
 
     private void OnEnable()
@@ -38,10 +38,6 @@ public class Note : MonoBehaviour
             {
                 Destroy(this.gameObject, 1);
             }
-            //else
-            //{
-            //    GetComponent<AudioSource>().Play();
-            //}
         }
 
         void NoteSpeedUp()
