@@ -40,7 +40,7 @@ public class CheckScreenPoint : MonoBehaviour
     {
         mainCam = GetComponent<Camera>();
 
-        Instantiate(collisionLine, new Vector3(0, -1.5f, 10f), Quaternion.identity);
+        Instantiate(collisionLine, new Vector3(0, -6.1f, 10f), Quaternion.identity);
 
         float noteSpace = verticalSpaceCam.pixelWidth / note.Length;
         float noteHeight =  /*0-(verticalSpaceCam.pixelHeight/10f)*/ -1110f;

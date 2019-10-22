@@ -5,7 +5,7 @@ using ToryUX;
 
 public class ResultSceneManager : MonoBehaviour
 {
-    public GameObject[] stageLevelManager;
+   //public GameObject[] stageLevelManager;
     public GameObject resultAudio;
 
     private void OnEnable()
@@ -32,10 +32,10 @@ public class ResultSceneManager : MonoBehaviour
 
         resultAudio.SetActive(true);
 
-        for (int i = 0; i < stageLevelManager.Length; i++)
-        {
-            stageLevelManager[i].SetActive(false);
-        }
+        //for (int i = 0; i < stageLevelManager.Length; i++)
+        //{
+        //    stageLevelManager[i].SetActive(false);
+        //}
     }
 
     void UpdateResult()
