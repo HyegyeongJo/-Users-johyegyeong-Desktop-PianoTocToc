@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - NoteCollider
+  - 1_Do
+  - 2_Re
+  - 3_Mi
+  - 4_Fa
+  - 5_Sol
+  - 6_Ra
+  - 7_Si
+  - 8_Do
+  - 9_Re
+  - 10_Mi
+  - 11_Fa
+  - 12_Sol
+  - 13_Ra
+  - 14_Si
+  - 15_Do
+  - 16_Re
+  - FxTemporaire
+  - FinishCollider
+  - Acc_01_DO
+  - Acc_02_Re
+  - Acc_03_Mi
+  - Acc_04_Fa
+  - Acc_05_Sol
+  - Acc_06_Ra
+  - Acc_07_Si
+  - Acc_08_Do
+  - Acc_09_Re
+  - Acc_10_Mi
+  - Acc_11_Fa
+  - Acc_12_Sol
+  - Acc_13_Ra
+  - Acc_14_Si
+  - Acc_15_Do
+  - Acc_16_Re
+  - Acc_17_Mi
+  - Acc_18_Fa
+  - Acc_19_Sol
+  - Acc_20_Ra
+  - Acc_21_Si
+  - Acc_22_Do
+  - Acc_23_Re
+  - Acc_24_Mi
+  - Acc_25_Fa
+  - Acc_26_Sol
+  - Acc_27_Ra
+  - Acc_28_Si
+  - MainNoteDestroy
+  - Note
+  - P_1
+  - P_2
+  - P_3
+  - P_4
+  - P_5
+  - P_6
+  - P_7
+  - P_8
+  - P_9
+  - P_10
+  - P_11
+  - P_12
+  - P_13
+  - P_14
+  - P_15
+  - P_16
+  - P_17
+  - 1_IDo
+  - 2_IRe
+  - 3_IMi
+  - 4_IFa
+  - 5_ISol
+  - 6_IRa
+  - 7_ISi
+  - 8_IDo
+  - 9_IRe
+  - 10_IMi
+  - 11_IFa
+  - 12_ISol
+  - 13_IRa
+  - 14_ISi
+  - 15_IDo
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Star
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

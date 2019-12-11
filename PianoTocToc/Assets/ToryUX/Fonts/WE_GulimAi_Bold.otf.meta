@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: cbbd288dc33774ee6a6bf8a04ba0f9ca
+timeCreated: 1500545528
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: GulimAiOTF
+  fontNames:
+  - GulimAiOTF
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

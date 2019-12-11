@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 694c69397872e412cbbb25e4b08702b5
+timeCreated: 1500545528
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Japers
+  fontNames:
+  - Japers
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
