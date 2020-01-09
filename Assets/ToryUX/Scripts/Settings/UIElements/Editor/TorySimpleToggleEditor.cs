@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace ToryUX
 {
-    [CustomEditor(typeof(TorySimpleToggle))]
-    public class TorySimpleToggleEditor : ToggleEditor
+	[CustomEditor(typeof(TorySimpleToggle))]
+	public class TorySimpleToggleEditor : ToggleEditor
     {
         TorySimpleToggle component;
         Vector2 toggleAreaSize;
@@ -47,7 +47,8 @@ namespace ToryUX
                 EditorGUILayout.Space();
                 Undo.RecordObject(component.labelText, "Label text change");
                 component.labelText.text = EditorGUILayout.TextField("Label", component.labelText.text);
-                EditorGUILayout.Space();
+				PrefabUtility.RecordPrefabInstancePropertyModifications(component.labelText);
+				EditorGUILayout.Space();
             }
             if (component.onText != null)
             {

@@ -84,12 +84,23 @@ namespace ToryUX
             base.Awake();
             FetchTextObjects();
             rectTransform = GetComponent<RectTransform>();
-            onValueChanged.AddListener(UpdateValue);
-
-            BindToryValue();
         }
 
-        public void BindToryValue()
+		protected override void Start()
+		{
+			base.Start();
+
+			onValueChanged.AddListener(UpdateValue);
+			BindToryValue();
+		}
+
+		protected override void OnDestroy()
+		{
+			base.OnDestroy();
+			onValueChanged.RemoveAllListeners();
+		}
+
+		public void BindToryValue()
         {
             boundToryFloats = new List<ToryValue.ToryFloat>();
             boundToryInts = new List<ToryValue.ToryInt>();
@@ -246,26 +257,26 @@ namespace ToryUX
             }
         }
 
-        public override void OnPointerEnter(PointerEventData eventData)
-        {
-            if (eventData.delta.magnitude > 0)
-            {
-                base.OnPointerEnter(eventData);
-                EventSystem.current.SetSelectedGameObject(gameObject);
-            }
-        }
+		public override void OnPointerEnter(PointerEventData eventData)
+		{
+			base.OnPointerEnter(eventData);
+			if (eventData.delta.magnitude > 0)
+			{
+				EventSystem.current.SetSelectedGameObject(gameObject);
+			}
+		}
 
-        public override void OnSelect(BaseEventData eventData)
-        {
-            base.OnSelect(eventData);
-            if (SettingsUI.Instance.selectionSound != null && interactable)
-            {
-                UISound.Play(SettingsUI.Instance.selectionSound);
-            }
-            SettingsUI.ScrollTo(rectTransform);
-        }
+		public override void OnSelect(BaseEventData eventData)
+		{
+			base.OnSelect(eventData);
+			if (SettingsUI.Instance.selectionSound != null && interactable)
+			{
+				UISound.Play(SettingsUI.Instance.selectionSound);
+			}
+			SettingsUI.ScrollTo(rectTransform);
+		}
 
-        public void UpdateValue(float value, bool muteSfx)
+		public void UpdateValue(float value, bool muteSfx)
         {
             #if UNITY_EDITOR
             if (valueText == null)
@@ -327,20 +338,20 @@ namespace ToryUX
             UpdateValue(value, false);
         }
 
-        public override void OnMove(AxisEventData eventData)
-        {
-            if (eventData.moveDir == MoveDirection.Left)
-            {
-                value -= (maxValue - minValue) / (float) stepCounts;
-            }
-            else if (eventData.moveDir == MoveDirection.Right)
-            {
-                value += (maxValue - minValue) / (float) stepCounts;
-            }
-            else
-            {
-                base.OnMove(eventData);
-            }
-        }
-    }
+		public override void OnMove(AxisEventData eventData)
+		{
+			if (eventData.moveDir == MoveDirection.Left)
+			{
+				value -= (maxValue - minValue) / (float)stepCounts;
+			}
+			else if (eventData.moveDir == MoveDirection.Right)
+			{
+				value += (maxValue - minValue) / (float)stepCounts;
+			}
+			else
+			{
+				base.OnMove(eventData);
+			}
+		}
+	}
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -74,7 +74,7 @@ namespace ToryUX
 		private float lastMouseCombiTime = 0;
 		private const float mouseCombiLife = 2f;
 
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 
 		// Shield TV Remote inputs.
 		[Header("ShieldTV Remote Inputs")]
@@ -86,12 +86,12 @@ namespace ToryUX
 				ShieldTVRemoteButton.Left,
 				ShieldTVRemoteButton.Right
 		};
-		#pragma warning disable 0414
+#pragma warning disable 0414
 		private int stvButtonCombiIndex = 0;
 		private float lastStvButtonCombiTime = 0;
 		private const float stvButtonCombiLife = 1f;
 
-		#endif
+#endif
 
 		void Awake()
 		{
@@ -142,20 +142,20 @@ namespace ToryUX
 			else
 			{
 				// Check if the key for basic settings is pressed.
-				#if UNITY_ANDROID
+#if UNITY_ANDROID
 				if (Input.GetKeyDown(keyForBasicSettings) ||
 					Input.GetKeyDown(stvButtonForBasicSettings.ToKeyCode()) ||
 					GetHotCornerMouseInput().BelongsTo(mouseInputForBasicSettings))
 				{
 					SettingsUI.Show();
 				}
-				#else
+#else
 				if (Input.GetKeyDown(keyForBasicSettings) ||
 					GetHotCornerMouseInput().BelongsTo(mouseInputForBasicSettings))
 				{
 					SettingsUI.Show();
 				}
-				#endif
+#endif
 			}
 
 			// Check key combination input for advanced settings.
@@ -175,9 +175,12 @@ namespace ToryUX
 						SettingsUI.ShowAdvancedPanel();
 					}
 				}
+				else if (Input.anyKeyDown)
+				{
+					keyCombiIndex = 0;
+				}
 			}
 
-			#if UNITY_STANDALONE
 			// Check mouse input combination for advanced settings.
 			if (mouseInputCombinationForAdvancedSettings.Length > 0)
 			{
@@ -196,9 +199,8 @@ namespace ToryUX
 					}
 				}
 			}
-			#endif
 
-			#if UNITY_ANDROID
+#if UNITY_ANDROID
 			// Check Shield TV remote button combination for advanced settings.
 			if (stvButtonCombinationForAdvancedSettings.Length > 0)
 			{
@@ -217,7 +219,7 @@ namespace ToryUX
 					}
 				}
 			}
-			#endif
+#endif
 		}
 
 		HotCornerMouseInput GetHotCornerMouseInput()
@@ -232,19 +234,19 @@ namespace ToryUX
 			bool receivedInput = false;
 			Vector2 inputPosition = Vector2.zero;
 
-			#if UNITY_EDITOR || (!UNITY_ANDROID && !UNITY_IOS)
-			receivedInput = Input.GetMouseButtonDown(0);
-			#else
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
 			receivedInput = Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began;
-			#endif
+#else
+			receivedInput = Input.GetMouseButtonDown(0);
+#endif
 
 			if (receivedInput)
 			{
-				#if UNITY_EDITOR || (!UNITY_ANDROID && !UNITY_IOS)
-				inputPosition = Input.mousePosition;
-				#else
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
 				inputPosition = Input.touches[0].position;
-				#endif
+#else
+				inputPosition = Input.mousePosition;
+#endif
 
 				if (inputPosition.x < Screen.width * cornerCoeff)
 				{

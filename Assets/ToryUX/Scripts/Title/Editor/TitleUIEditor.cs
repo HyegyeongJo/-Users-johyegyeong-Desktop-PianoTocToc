@@ -75,12 +75,14 @@ namespace ToryUX
 			EditorGUILayout.BeginHorizontal();
 			Undo.RecordObject(heroImage, "Hero image change");
 			heroImage.sprite = EditorGUILayout.ObjectField(heroImage.sprite, typeof(Sprite), false, GUILayout.Width(100f), GUILayout.Height(70f)) as Sprite;
+			PrefabUtility.RecordPrefabInstancePropertyModifications(heroImage);
 			EditorGUILayout.BeginVertical();
 			EditorGUILayout.LabelField("Animation Clip/Speed");
 			Undo.RecordObject(heroImageAnimationPlayer, "Hero image animation clip change");
 			heroImageAnimationPlayer.idleAnimation.animationClip = EditorGUILayout.ObjectField(heroImageAnimationPlayer.idleAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 			Undo.RecordObject(heroImageAnimationPlayer, "Hero image animation speed change");
 			heroImageAnimationPlayer.idleAnimation.playSpeed = EditorGUILayout.FloatField(heroImageAnimationPlayer.idleAnimation.playSpeed);
+			PrefabUtility.RecordPrefabInstancePropertyModifications(heroImageAnimationPlayer);
 			EditorGUILayout.Space();
 			if (GUILayout.Button("Ping Object", EditorStyles.miniButton))
 			{
@@ -96,12 +98,14 @@ namespace ToryUX
 			EditorGUILayout.BeginHorizontal();
 			Undo.RecordObject(wordmarkImage, "Wordmark image change");
 			wordmarkImage.sprite = EditorGUILayout.ObjectField(wordmarkImage.sprite, typeof(Sprite), false, GUILayout.Width(100f), GUILayout.Height(70f)) as Sprite;
+			PrefabUtility.RecordPrefabInstancePropertyModifications(wordmarkImage);
 			EditorGUILayout.BeginVertical();
 			EditorGUILayout.LabelField("Animation Clip/Speed");
 			Undo.RecordObject(wordmarkAnimationPlayer, "Wordmark animation clip change");
 			wordmarkAnimationPlayer.idleAnimation.animationClip = EditorGUILayout.ObjectField(wordmarkAnimationPlayer.idleAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 			Undo.RecordObject(heroImageAnimationPlayer, "Wordmark animation speed change");
 			wordmarkAnimationPlayer.idleAnimation.playSpeed = EditorGUILayout.FloatField(wordmarkAnimationPlayer.idleAnimation.playSpeed);
+			PrefabUtility.RecordPrefabInstancePropertyModifications(wordmarkAnimationPlayer);
 			EditorGUILayout.Space();
 			if (GUILayout.Button("Ping Object", EditorStyles.miniButton))
 			{
@@ -118,12 +122,14 @@ namespace ToryUX
 			EditorGUILayout.BeginHorizontal();
 			Undo.RecordObject(instructionIconImage, "Instruction icon image change");
 			instructionIconImage.sprite = EditorGUILayout.ObjectField(instructionIconImage.sprite, typeof(Sprite), false, GUILayout.Width(100f), GUILayout.Height(70f)) as Sprite;
+			PrefabUtility.RecordPrefabInstancePropertyModifications(instructionIconImage);
 			EditorGUILayout.BeginVertical();
 			EditorGUILayout.LabelField("Animation Clip/Speed");
 			Undo.RecordObject(instructionIconAnimationPlayer, "Instruction icon animation clip change");
 			instructionIconAnimationPlayer.idleAnimation.animationClip = EditorGUILayout.ObjectField(instructionIconAnimationPlayer.idleAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 			Undo.RecordObject(instructionIconAnimationPlayer, "Instruction icon animation speed change");
 			instructionIconAnimationPlayer.idleAnimation.playSpeed = EditorGUILayout.FloatField(instructionIconAnimationPlayer.idleAnimation.playSpeed);
+			PrefabUtility.RecordPrefabInstancePropertyModifications(instructionIconAnimationPlayer);
 			EditorGUILayout.Space();
 			if (GUILayout.Button("Ping Object", EditorStyles.miniButton))
 			{
@@ -136,12 +142,14 @@ namespace ToryUX
 			EditorGUILayout.BeginHorizontal();
 			Undo.RecordObject(instructionWordsImage, "Instruction words image change");
 			instructionWordsImage.sprite = EditorGUILayout.ObjectField(instructionWordsImage.sprite, typeof(Sprite), false, GUILayout.Width(100f), GUILayout.Height(70f)) as Sprite;
+			PrefabUtility.RecordPrefabInstancePropertyModifications(instructionWordsImage);
 			EditorGUILayout.BeginVertical();
 			EditorGUILayout.LabelField("Animation Clip/Speed");
 			Undo.RecordObject(instructionWordsAnimationPlayer, "Instruction words animation clip change");
 			instructionWordsAnimationPlayer.idleAnimation.animationClip = EditorGUILayout.ObjectField(instructionWordsAnimationPlayer.idleAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 			Undo.RecordObject(instructionWordsAnimationPlayer, "Instruction words animation speed change");
 			instructionWordsAnimationPlayer.idleAnimation.playSpeed = EditorGUILayout.FloatField(instructionWordsAnimationPlayer.idleAnimation.playSpeed);
+			PrefabUtility.RecordPrefabInstancePropertyModifications(instructionWordsAnimationPlayer);
 			EditorGUILayout.Space();
 			if (GUILayout.Button("Ping Object", EditorStyles.miniButton))
 			{
@@ -157,12 +165,14 @@ namespace ToryUX
 			EditorGUILayout.BeginHorizontal();
 			Undo.RecordObject(funtoryLogoImage, "Funtory icon sprite change");
 			funtoryLogoImage.sprite = EditorGUILayout.ObjectField(funtoryLogoImage.sprite, typeof(Sprite), false, GUILayout.Width(80f), GUILayout.Height(80f)) as Sprite;
+			PrefabUtility.RecordPrefabInstancePropertyModifications(funtoryLogoImage);
 			EditorGUILayout.BeginVertical();
 			EditorGUILayout.LabelField("Animation Clip/Speed");
 			Undo.RecordObject(funtoryLogoAnimationPlayer, "Funtory icon animation clip change");
 			funtoryLogoAnimationPlayer.idleAnimation.animationClip = EditorGUILayout.ObjectField(funtoryLogoAnimationPlayer.idleAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 			Undo.RecordObject(funtoryLogoAnimationPlayer, "Funtory icon animation speed change");
 			funtoryLogoAnimationPlayer.idleAnimation.playSpeed = EditorGUILayout.FloatField(funtoryLogoAnimationPlayer.idleAnimation.playSpeed);
+			PrefabUtility.RecordPrefabInstancePropertyModifications(funtoryLogoAnimationPlayer);
 			EditorGUILayout.Space();
 			if (GUILayout.Button("Ping Object", EditorStyles.miniButton))
 			{

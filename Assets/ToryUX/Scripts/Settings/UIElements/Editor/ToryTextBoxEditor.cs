@@ -22,7 +22,8 @@ namespace ToryUX
                 EditorGUI.BeginChangeCheck();
                 Undo.RecordObject(component.uiText, "Text change");
                 component.uiText.text = EditorGUILayout.TextArea(component.uiText.text, GUILayout.ExpandHeight(true));
-                if (EditorGUI.EndChangeCheck())
+				PrefabUtility.RecordPrefabInstancePropertyModifications(component.uiText);
+				if (EditorGUI.EndChangeCheck())
                 {
                     EditorApplication.delayCall += component.ResizeToFit;
                 }

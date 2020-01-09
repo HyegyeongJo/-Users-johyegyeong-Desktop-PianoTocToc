@@ -100,6 +100,7 @@ namespace ToryUX
 					uiWrapperTransform.offsetMin = new Vector2(0, wrapperTransformBottom);
 					Undo.RecordObject(uiWrapperTransform, "Progess bar size change");
 					uiWrapperTransform.offsetMax = new Vector2(0, wrapperTransformTop - UIOrientationSetter.ReferenceResolution.y);
+					PrefabUtility.RecordPrefabInstancePropertyModifications(uiWrapperTransform);
 				}
 			}
 
@@ -113,6 +114,7 @@ namespace ToryUX
 			fillBackgroundColorImage.color = EditorGUILayout.ColorField(fillBackgroundColorImage.color);
 			Undo.RecordObject(fillForegroundColorImage, "Color scheme change");
 			fillForegroundColorImage.color = EditorGUILayout.ColorField(fillForegroundColorImage.color);
+			PrefabUtility.RecordPrefabInstancePropertyModifications(fillForegroundColorImage);
 			EditorGUILayout.EndHorizontal();
 			EditorGUILayout.HelpBox("When the color does not seem to apply, clicking the color field once more to open color wheel window should solve the problem.", MessageType.None);
 
@@ -132,6 +134,7 @@ namespace ToryUX
 			goalIconAnimationPlayer.idleAnimation.animationClip = EditorGUILayout.ObjectField("Animation Clip", goalIconAnimationPlayer.idleAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 			Undo.RecordObject(goalIconAnimationPlayer, "Goal icon animation speed change");
 			goalIconAnimationPlayer.idleAnimation.playSpeed = EditorGUILayout.FloatField("Play Speed", goalIconAnimationPlayer.idleAnimation.playSpeed);
+			PrefabUtility.RecordPrefabInstancePropertyModifications(goalIconAnimationPlayer);
 			EditorGUILayout.EndVertical();
 			EditorGUILayout.Space();
 			EditorGUILayout.EndHorizontal();
@@ -139,6 +142,7 @@ namespace ToryUX
 			EditorGUILayout.EndVertical();
 			Undo.RecordObject(goalIconImage, "Goal icon image change");
 			goalIconImage.sprite = EditorGUILayout.ObjectField(goalIconImage.sprite, typeof(Sprite), false, GUILayout.MaxWidth(100f), GUILayout.MaxHeight(100f)) as Sprite;
+			PrefabUtility.RecordPrefabInstancePropertyModifications(goalIconImage);
 			EditorGUILayout.EndHorizontal();
 
 			// Indicator icon sprite and animation.
@@ -157,6 +161,7 @@ namespace ToryUX
 			indicatorIconAnimationPlayer.idleAnimation.animationClip = EditorGUILayout.ObjectField("Animation Clip", indicatorIconAnimationPlayer.idleAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 			Undo.RecordObject(indicatorIconAnimationPlayer, "Indicator icon animation speed change");
 			indicatorIconAnimationPlayer.idleAnimation.playSpeed = EditorGUILayout.FloatField("Play Speed", indicatorIconAnimationPlayer.idleAnimation.playSpeed);
+			PrefabUtility.RecordPrefabInstancePropertyModifications(indicatorIconAnimationPlayer);
 			EditorGUILayout.EndVertical();
 			EditorGUILayout.Space();
 			EditorGUILayout.EndHorizontal();
@@ -164,6 +169,7 @@ namespace ToryUX
 			EditorGUILayout.EndVertical();
 			Undo.RecordObject(indicatorIconImage, "Indicator icon image change");
 			indicatorIconImage.sprite = EditorGUILayout.ObjectField(indicatorIconImage.sprite, typeof(Sprite), false, GUILayout.MaxWidth(100f), GUILayout.MaxHeight(100f)) as Sprite;
+			PrefabUtility.RecordPrefabInstancePropertyModifications(indicatorIconImage);
 			EditorGUILayout.EndHorizontal();
 
 			// UI show/hide animation.
@@ -181,6 +187,7 @@ namespace ToryUX
 			progressWrapperAnimationPlayer.hideAnimation.animationClip = EditorGUILayout.ObjectField("Animation Clip", progressWrapperAnimationPlayer.hideAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 			Undo.RecordObject(progressWrapperAnimationPlayer, "ProgressUI hide animation speed change");
 			progressWrapperAnimationPlayer.hideAnimation.playSpeed = EditorGUILayout.FloatField("Play Speed", progressWrapperAnimationPlayer.hideAnimation.playSpeed);
+			PrefabUtility.RecordPrefabInstancePropertyModifications(progressWrapperAnimationPlayer);
 
 			serializedObject.ApplyModifiedProperties();
 		}

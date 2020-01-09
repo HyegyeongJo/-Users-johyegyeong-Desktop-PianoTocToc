@@ -90,6 +90,7 @@ namespace ToryUX
 				EditorGUILayout.Space();
 				Undo.RecordObject(component.labelText, "Label text change");
 				component.labelText.text = EditorGUILayout.TextField("Label", component.labelText.text);
+				PrefabUtility.RecordPrefabInstancePropertyModifications(component.labelText);
 				EditorGUILayout.Space();
 			}
 
@@ -111,6 +112,7 @@ namespace ToryUX
 					sliderAreaTransform.offsetMin = new Vector2(sliderAreaTransformLeft, 0);
 					Undo.RecordObject(sliderAreaTransform, "Slider area size change");
 					sliderAreaTransform.offsetMax = new Vector2(sliderAreaTransformRight - wholeAreaTransform.rect.width, 0);
+					PrefabUtility.RecordPrefabInstancePropertyModifications(sliderAreaTransform);
 				}
 				EditorGUILayout.Space();
 			}

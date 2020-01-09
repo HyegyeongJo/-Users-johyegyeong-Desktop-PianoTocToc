@@ -24,19 +24,6 @@ namespace ToryUX
             parentRectTransform = transform.parent.GetComponent<RectTransform>();
             rectTransform = GetComponent<RectTransform>();
             RawImage = GetComponent<RawImage>();
-
-            #if TORY_EYE
-            if (WebcamTextureManager.Instance.UseToryEyeCameraTexture && ToryEye.Instance.ChangeCameraContextWhenNeed)
-            {
-                ToryEye.Instance.onWebcamSizeChanged.AddListener(delegate()
-                {
-                    if (gameObject.activeInHierarchy)
-                    {
-                        WaitAndResizeToFit();
-                    }
-                });
-            }
-            #endif
         }
 
         void OnEnable()
@@ -199,8 +186,6 @@ namespace ToryUX
             {
                 return;
             }
-
-            WebcamTextureManager.Instance.SelectCamera(webcamIndex);
         }
     }
 }

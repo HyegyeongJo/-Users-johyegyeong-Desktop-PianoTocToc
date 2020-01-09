@@ -58,6 +58,14 @@ namespace ToryUX
             }
         }
 
+		~LeaderboardEntry()
+		{
+			if (portraitPhoto != null)
+			{
+				UnityEngine.Object.Destroy(portraitPhoto);
+			}
+		}
+
         /// <summary>
         /// Create LeaderboardEntry with photo using current record, depend on leaderboard's record type
         /// </summary>
@@ -125,9 +133,12 @@ namespace ToryUX
         {}
         */
 
-        public void NullifyPortraitPhoto()
-        {
-            portraitPhoto = null;
-        }
+        public void DestroyPortraitPhoto()
+		{
+			if (portraitPhoto != null)
+			{
+				UnityEngine.Object.Destroy(portraitPhoto);
+			}
+		}
     }
 }

@@ -24,25 +24,12 @@ namespace ToryUX
             photoRectTransform = photoImage.GetComponent<RectTransform>();
             renderTexture = GetComponentInChildren<Camera>().targetTexture;
 
-            #if TORY_EYE
-            if (WebcamTextureManager.Instance.UseToryEyeCameraTexture && ToryEye.Instance.ChangeCameraContextWhenNeed)
-            {
-                ToryEye.Instance.onWebcamSizeChanged.AddListener(delegate()
-                {
-                    if (gameObject.activeInHierarchy)
-                    {
-                        WaitAndResizeToFit();
-                    }
-                });
-            }
-            #endif
-
             OnResizedToFit += () =>
             {
                 StopCoroutine(CreateClippedSnapTexture());
                 StartCoroutine(CreateClippedSnapTexture());
             };
-        }
+		}
 
         void Start()
         {
@@ -55,23 +42,24 @@ namespace ToryUX
         }
 
         IEnumerator CreateClippedSnapTexture()
-        {
-            yield return new WaitForEndOfFrame();
+		{
+			yield return new WaitForEndOfFrame();
 
             if (TorywardManager.Instance.ClippedSnap == null ||
                 TorywardManager.Instance.ClippedSnap.width != renderTexture.width ||
                 TorywardManager.Instance.ClippedSnap.height != renderTexture.height)
             {
-                TorywardManager.Instance.ClippedSnap = null;
-                Resources.UnloadUnusedAssets();
-                System.GC.Collect();
+				if (TorywardManager.Instance.ClippedSnap == null)
+				{
+					Destroy(TorywardManager.Instance.ClippedSnap);
+				}
 
                 TorywardManager.Instance.ClippedSnap = new Texture2D(renderTexture.width, renderTexture.height);
             }
 
             yield return new WaitForEndOfFrame();
 
-            RenderTexture currentRT = RenderTexture.active;
+			RenderTexture currentRT = RenderTexture.active;
             RenderTexture.active = renderTexture;
 
             TorywardManager.Instance.ClippedSnap.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
@@ -159,10 +147,20 @@ namespace ToryUX
 
             if (photoRectTransform != null && TorywardManager.Instance.Snap != null)
             {
-                photoRectTransform.sizeDelta = new Vector2(
-                    TorywardManager.Instance.Snap.width * parentRectTransform.sizeDelta.y / TorywardManager.Instance.Snap.height * zoomLevel,
-                    parentRectTransform.sizeDelta.y * zoomLevel
-                );
+				if (TorywardManager.Instance.Snap.width > TorywardManager.Instance.Snap.height)
+				{
+					photoRectTransform.sizeDelta = new Vector2(
+						TorywardManager.Instance.Snap.width * parentRectTransform.sizeDelta.y / TorywardManager.Instance.Snap.height * zoomLevel,
+						parentRectTransform.sizeDelta.y * zoomLevel
+					);
+				}
+				else
+				{
+					photoRectTransform.sizeDelta = new Vector2(
+						parentRectTransform.sizeDelta.x * zoomLevel,
+						TorywardManager.Instance.Snap.height * parentRectTransform.sizeDelta.x / TorywardManager.Instance.Snap.width * zoomLevel
+					);
+				}
             }
         }
 
