@@ -70,22 +70,26 @@ namespace ToryCare
 			{
 				if (string.IsNullOrEmpty(dataRootDirectory))
 				{
-					#if UNITY_ANDROID && !UNITY_EDITOR
+#if UNITY_ANDROID && !UNITY_EDITOR
 					dataRootDirectory = Path.Combine(Application.persistentDataPath, "ToryCare");
-					#else
+#elif UNITY_IOS && !UNITY_EDITOR
+					dataRootDirectory = Application.persistentDataPath;
+#else
 					dataRootDirectory = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "Envisible");
-					#endif
+#endif
 
 					if (!Directory.Exists(dataRootDirectory))
 					{
 						Directory.CreateDirectory(dataRootDirectory);
 					}
 
+#if !UNITY_IOS
 					dataRootDirectory = Path.Combine(dataRootDirectory, Application.identifier);
 					if (!Directory.Exists(dataRootDirectory))
 					{
 						Directory.CreateDirectory(dataRootDirectory);
 					}
+#endif
 				}
 				return dataRootDirectory;
 			}
@@ -127,9 +131,9 @@ namespace ToryCare
 			}
 		}
 
-		#endregion
+#endregion
 
-		#region ToryCare
+#region ToryCare
 
 		// ToryLog vital period
 		public static int SendVitalPeriod
@@ -140,9 +144,9 @@ namespace ToryCare
 			}
 		}
 
-		#endregion
+#endregion
 
-		#region Toryward
+#region Toryward
 
 		// Toryward appery DBID
 		private static string torywardApperyDatabaseID = "";
@@ -223,7 +227,7 @@ namespace ToryCare
 			}
 		}
 
-		#if TORY_FRAMEWORK
+#if TORY_FRAMEWORK
 		public static bool AutoTakeTorywardPhoto
 		{
 			get
@@ -231,7 +235,7 @@ namespace ToryCare
 				return Instance.json.autoTakeTorywardPhoto;
 			}
 		}
-		#endif
+#endif
 
 		public static string BranchCode
 		{
@@ -293,9 +297,9 @@ namespace ToryCare
 			}
 		}
 
-		#endregion
+#endregion
 
-		#region Reward Card
+#region Reward Card
 
 		public static bool ShowRewardCardSequence
 		{
@@ -339,22 +343,9 @@ namespace ToryCare
 			}
 		}
 
-		#endregion
+#endregion
 
-		#region ToryEye
-
-		// Use Syphon texture from shared vram with ToryEye.App camera texture?
-		public static bool UseToryEyeCameraTexture
-		{
-			get
-			{
-				return Instance.json.useToryEyeCameraTexture;
-			}
-		}
-
-		#endregion
-
-		#region Sound Control
+#region Sound Control
 
 		public static float MasterVolume
 		{
@@ -392,9 +383,9 @@ namespace ToryCare
 			}
 		}
 
-		#endregion
+#endregion
 
-		#region Network Settings
+#region Network Settings
 
 		public static int ToryMessageOscReceivePort
 		{
@@ -436,7 +427,7 @@ namespace ToryCare
 			}
 		}
 
-		#endregion
+#endregion
 
 		public static string[] ObservingKeycode
 		{
@@ -464,9 +455,9 @@ namespace ToryCare
 				json = new ConfigJson();
 			}
 
-			#if UNITY_EDITOR
+#if UNITY_EDITOR
 			json.LoadFromEditorInspector();
-			#endif
+#endif
 
 			SaveToFile();
 		}
@@ -505,17 +496,17 @@ namespace ToryCare
 		public bool doUploadTorywardEntryFromUnity = true;
 		public int torywardUploadEntryLimitRank = 5;
 
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		public float torywardTakePhotoDelay = 2.5f;
-		#else
+#else
 		public float torywardTakePhotoDelay = 1f;
-		#endif
+#endif
 
 		public bool playBackgroundWebcam = true;
 
-		#if TORY_FRAMEWORK
+#if TORY_FRAMEWORK
 		public bool autoTakeTorywardPhoto = false;
-		#endif
+#endif
 
 		public string branchCode = "";
 		public string contentName = "한글콘텐츠명";
@@ -532,9 +523,6 @@ namespace ToryCare
 		public int minScoreForShowRewardCard = 1;
 		public int rewardCardShowDuration = 15;
 		public string rewardCardImageFilename = "RewardCard.png";
-
-		// get webcam texture from toryeye setting
-		public bool useToryEyeCameraTexture = false;
 
 		// volume setting
 		public float masterVolume = .7f;
@@ -571,17 +559,12 @@ namespace ToryCare
 				contentName = ToryCareBehaviour.Instance.contentNameInKorean;
 			}
 
-			if (ToryUX.WebcamTextureManager.Instance != null)
-			{
-				useToryEyeCameraTexture = ToryUX.WebcamTextureManager.Instance.useToryEyeCameraTexture;
-			}
-
-			#if TORY_FRAMEWORK
+#if TORY_FRAMEWORK
 			if (ToryUX.TorywardManager.Instance != null)
 			{
 				autoTakeTorywardPhoto = ToryUX.TorywardManager.Instance.autoTakePhotoOnGameFinish;
 			}
-			#endif
+#endif
 		}
 	}
 }

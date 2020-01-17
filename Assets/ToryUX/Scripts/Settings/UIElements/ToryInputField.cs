@@ -51,20 +51,30 @@ namespace ToryUX
             }
         }
 
-        protected override void Awake()
-        {
-            base.Awake();
-            FetchObjects();
-            rectTransform = GetComponent<RectTransform>();
-            onEndEdit.AddListener(UpdateValue);
+		protected override void Awake()
+		{
+			base.Awake();
+			FetchObjects();
+			rectTransform = GetComponent<RectTransform>();
+		}
 
-            originalSelectionColor = selectionColor;
-            originalCaretColor = caretColor;
+		protected override void Start()
+		{
+			base.Start();
 
-            BindToryValue();
-        }
+			onEndEdit.AddListener(UpdateValue);
+			originalSelectionColor = selectionColor;
+			originalCaretColor = caretColor;
+			BindToryValue();
+		}
 
-        public void BindToryValue()
+		protected override void OnDestroy()
+		{
+			base.OnDestroy();
+			onEndEdit.RemoveAllListeners();
+		}
+
+		public void BindToryValue()
         {
             boundToryStrings = new List<ToryValue.ToryString>();
 
@@ -85,7 +95,6 @@ namespace ToryUX
             }
 
             hasBoundToryValue = boundToryStrings.Count > 0;
-            OnEnable();
         }
 
         protected override void OnEnable()
@@ -141,30 +150,30 @@ namespace ToryUX
             }
         }
 
-        public override void OnPointerEnter(PointerEventData eventData)
-        {
-            if (eventData.delta.magnitude > 0)
-            {
-                base.OnPointerEnter(eventData);
-                EventSystem.current.SetSelectedGameObject(gameObject);
-            }
-        }
+		public override void OnPointerEnter(PointerEventData eventData)
+		{
+			base.OnPointerEnter(eventData);
+			if (eventData.delta.magnitude > 0)
+			{
+				EventSystem.current.SetSelectedGameObject(gameObject);
+			}
+		}
 
-        public override void OnSelect(BaseEventData eventData)
-        {
-            base.OnSelect(eventData);
-            if (SettingsUI.Instance.selectionSound != null && interactable)
-            {
-                UISound.Play(SettingsUI.Instance.selectionSound);
-            }
-            SettingsUI.ScrollTo(rectTransform);
+		public override void OnSelect(BaseEventData eventData)
+		{
+			base.OnSelect(eventData);
+			if (SettingsUI.Instance.selectionSound != null && interactable)
+			{
+				UISound.Play(SettingsUI.Instance.selectionSound);
+			}
+			SettingsUI.ScrollTo(rectTransform);
 
-            justSelected = true;
-            selectionColor = Color.clear;
-            caretColor = Color.clear;
-        }
+			justSelected = true;
+			selectionColor = Color.clear;
+			caretColor = Color.clear;
+		}
 
-        public override void OnUpdateSelected(BaseEventData eventData)
+		public override void OnUpdateSelected(BaseEventData eventData)
         {
             base.OnUpdateSelected(eventData);
             if (justSelected)

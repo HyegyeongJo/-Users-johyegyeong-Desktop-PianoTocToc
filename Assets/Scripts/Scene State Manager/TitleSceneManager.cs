@@ -16,6 +16,7 @@ public class TitleSceneManager : MonoBehaviour
     public GameObject bear_4;
     public GameObject funtorySonge_5;
     public GameObject freeMode_6;
+    [SerializeField] GameObject timerUI;
 
     public GameObject[] stageBalloon;
     int stageNum = 0;
@@ -127,6 +128,7 @@ public class TitleSceneManager : MonoBehaviour
 
         freeMode_6.SetActive(true);
 
+        timerUI.SetActive(true);
         Timer.ShowUI();
         TF.Scene.Proceed();
     }

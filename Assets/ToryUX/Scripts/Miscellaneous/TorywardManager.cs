@@ -130,11 +130,6 @@ namespace ToryUX
 					ToryUX.SettingsUI.ShowAdvancedPanel();
 				}
 			}
-
-			if (!WebcamTextureManager.Instance.UseToryEyeCameraTexture && ToryCare.Config.PlayBackgroundWebcam)
-			{
-				WebcamTextureManager.Instance.StartCamera(null);
-			}
 		}
 		#endif
 
@@ -260,9 +255,10 @@ namespace ToryUX
 			{
 				if (Snap == null || Snap.width != WebcamTextureManager.Instance.Texture.width || Snap.height != WebcamTextureManager.Instance.Texture.height)
 				{
-					Snap = null;
-					Resources.UnloadUnusedAssets();
-					System.GC.Collect();
+					if (Snap != null)
+					{
+						Destroy(Snap);
+					}
 
 					yield return new WaitForEndOfFrame();
 					Snap = new Texture2D(WebcamTextureManager.Instance.Texture.width, WebcamTextureManager.Instance.Texture.height);
@@ -283,9 +279,7 @@ namespace ToryUX
 
 				yield return new WaitForSeconds(.1f);
 
-				renderTexture = null;
-				Resources.UnloadUnusedAssets();
-				System.GC.Collect();
+				renderTexture.Release();
 
 				// Create and get clipped snapshot photo.
 				GameObject.Instantiate(playerSnapshotPrefab);
@@ -311,7 +305,14 @@ namespace ToryUX
 
 		void OnDestroy()
 		{
-			instance = null;
+			if (Snap != null)
+			{
+				Destroy(Snap);
+			}
+			if (ClippedSnap != null)
+			{
+				Destroy(ClippedSnap);
+			}
 		}
 	}
 }

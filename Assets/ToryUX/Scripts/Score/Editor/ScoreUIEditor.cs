@@ -124,6 +124,7 @@ namespace ToryUX
 			EditorGUILayout.EndVertical();
 			Undo.RecordObject(scoreIconImage, "Goal icon image change");
 			scoreIconImage.sprite = EditorGUILayout.ObjectField(scoreIconImage.sprite, typeof(Sprite), false, GUILayout.Width(80), GUILayout.Height(80)) as Sprite;
+			PrefabUtility.RecordPrefabInstancePropertyModifications(scoreIconImage);
 			EditorGUILayout.EndHorizontal();
 
 			// Decoration images.
@@ -140,6 +141,7 @@ namespace ToryUX
 				{
 					Undo.RecordObject(decorationImages[i], "Decoration image change");
 					decorationImages[i].sprite = EditorGUILayout.ObjectField(decorationImages[i].sprite, typeof(Sprite), false, GUILayout.Width(80), GUILayout.Height(80)) as Sprite;
+					PrefabUtility.RecordPrefabInstancePropertyModifications(decorationImages[i]);
 				}
 				EditorGUILayout.EndHorizontal();
 			}
@@ -156,6 +158,7 @@ namespace ToryUX
 				foreach (var graphic in colorScheme.Value)
 				{
 					graphic.color = EditorGUILayout.ColorField(graphic.color, GUILayout.MaxWidth(65f));
+					PrefabUtility.RecordPrefabInstancePropertyModifications(graphic);
 				}
 				EditorGUILayout.EndHorizontal();
 			}
@@ -214,6 +217,7 @@ namespace ToryUX
 					scoreUIWrapperAnimationPlayers[i].hideAnimation.animationClip = EditorGUILayout.ObjectField("Hide Anim. Clip", scoreUIWrapperAnimationPlayers[i].hideAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 					Undo.RecordObject(scoreUIWrapperAnimationPlayers[i], "Scoreboard hide animation speed change");
 					scoreUIWrapperAnimationPlayers[i].hideAnimation.playSpeed = EditorGUILayout.FloatField("Hide Anim. Speed", scoreUIWrapperAnimationPlayers[i].hideAnimation.playSpeed);
+					PrefabUtility.RecordPrefabInstancePropertyModifications(scoreUIWrapperAnimationPlayers[i]);
 				}
 				EditorGUI.indentLevel -= 1;
 			}
@@ -245,6 +249,7 @@ namespace ToryUX
 					comboUIWrapperAnimationPlayers[i].hideAnimation.animationClip = EditorGUILayout.ObjectField("Hide Anim. Clip", scoreUIWrapperAnimationPlayers[i].hideAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 					Undo.RecordObject(comboUIWrapperAnimationPlayers[i], "Combo pane hide animation speed change");
 					scoreUIWrapperAnimationPlayers[i].hideAnimation.playSpeed = EditorGUILayout.FloatField("Hide Anim. Speed", scoreUIWrapperAnimationPlayers[i].hideAnimation.playSpeed);
+					PrefabUtility.RecordPrefabInstancePropertyModifications(comboUIWrapperAnimationPlayers[i]);
 				}
 				EditorGUI.indentLevel -= 1;
 			}
@@ -281,6 +286,7 @@ namespace ToryUX
 					scorePointAnimations[i].loseAnimation.animationClip = EditorGUILayout.ObjectField("Lose Anim. Clip", scorePointAnimations[i].loseAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 					Undo.RecordObject(scorePointAnimations[i], "Score lose animation speed change");
 					scorePointAnimations[i].loseAnimation.playSpeed = EditorGUILayout.FloatField("Lose Anim. Speed", scorePointAnimations[i].loseAnimation.playSpeed);
+					PrefabUtility.RecordPrefabInstancePropertyModifications(scorePointAnimations[i]);
 				}
 				EditorGUI.indentLevel -= 1;
 			}
@@ -317,6 +323,7 @@ namespace ToryUX
 					comboPointAnimations[i].failAnimation.animationClip = EditorGUILayout.ObjectField("Fail Anim. Clip", comboPointAnimations[i].failAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
 					Undo.RecordObject(comboPointAnimations[i], "Combo fail animation speed change");
 					comboPointAnimations[i].failAnimation.playSpeed = EditorGUILayout.FloatField("Fail Anim. Speed", comboPointAnimations[i].failAnimation.playSpeed);
+					PrefabUtility.RecordPrefabInstancePropertyModifications(comboPointAnimations[i]);
 				}
 				EditorGUI.indentLevel -= 1;
 			}

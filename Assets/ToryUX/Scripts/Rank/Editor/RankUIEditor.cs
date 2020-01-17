@@ -139,8 +139,9 @@ namespace ToryUX
                 foreach (var graphic in colorScheme.Value)
                 {
                     graphic.color = EditorGUILayout.ColorField(graphic.color, GUILayout.MaxWidth(65f));
-                }
-                EditorGUILayout.EndHorizontal();
+					PrefabUtility.RecordPrefabInstancePropertyModifications(graphic);
+				}
+				EditorGUILayout.EndHorizontal();
             }
 
             // Ranking text postfix color scheme.
@@ -148,7 +149,8 @@ namespace ToryUX
             EditorGUILayout.LabelField("Ranking Text Postfix", EditorStyles.wordWrappedLabel);
             Undo.RecordObject(target, "rankingPostfixTextColor change");
             ((RankUI) target).textPostfixTextColor = EditorGUILayout.ColorField(((RankUI) target).textPostfixTextColor, GUILayout.MaxWidth(65f));
-            EditorGUILayout.EndHorizontal();
+			PrefabUtility.RecordPrefabInstancePropertyModifications(target);
+			EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.HelpBox("When the color does not seem to apply, clicking the color field once more to open color wheel window should solve the problem.", MessageType.None);
 
@@ -211,8 +213,9 @@ namespace ToryUX
                     rankUIWrapperAnimationPlayers[i].hideAnimation.animationClip = EditorGUILayout.ObjectField("Hide Anim. Clip", rankUIWrapperAnimationPlayers[i].hideAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
                     Undo.RecordObject(rankUIWrapperAnimationPlayers[i], "Rank hide animation speed change");
                     rankUIWrapperAnimationPlayers[i].hideAnimation.playSpeed = EditorGUILayout.FloatField("Hide Anim. Speed", rankUIWrapperAnimationPlayers[i].hideAnimation.playSpeed);
-                }
-                EditorGUI.indentLevel -= 1;
+					PrefabUtility.RecordPrefabInstancePropertyModifications(rankUIWrapperAnimationPlayers[i]);
+				}
+				EditorGUI.indentLevel -= 1;
             }
 
             // Ranking rise/fall animations.
@@ -247,8 +250,9 @@ namespace ToryUX
                     rankingAnimations[i].fallAnimation.animationClip = EditorGUILayout.ObjectField("Fall Anim. Clip", rankingAnimations[i].fallAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
                     Undo.RecordObject(rankingAnimations[i], "Ranking fall animation speed change");
                     rankingAnimations[i].fallAnimation.playSpeed = EditorGUILayout.FloatField("Fall Anim. Speed", rankingAnimations[i].fallAnimation.playSpeed);
-                }
-                EditorGUI.indentLevel -= 1;
+					PrefabUtility.RecordPrefabInstancePropertyModifications(rankingAnimations[i]);
+				}
+				EditorGUI.indentLevel -= 1;
             }
 
             EditorUtility.SetDirty(target);

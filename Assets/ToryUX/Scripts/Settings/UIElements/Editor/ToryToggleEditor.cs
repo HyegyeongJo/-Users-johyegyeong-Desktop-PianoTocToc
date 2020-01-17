@@ -45,7 +45,8 @@ namespace ToryUX
                 EditorGUILayout.Space();
                 Undo.RecordObject(component.labelText, "Label text change");
                 component.labelText.text = EditorGUILayout.TextField("Label", component.labelText.text);
-                EditorGUILayout.Space();
+				PrefabUtility.RecordPrefabInstancePropertyModifications(component.labelText);
+				EditorGUILayout.Space();
             }
 
             EditorGUILayout.LabelField("Options To Toggle", EditorStyles.boldLabel);

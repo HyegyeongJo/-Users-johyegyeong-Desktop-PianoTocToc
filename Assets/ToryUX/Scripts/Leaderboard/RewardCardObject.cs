@@ -24,12 +24,13 @@ public class RewardCardObject : MonoBehaviour
 			StopCoroutine(LoadCardTextureCoroutine());
 			loadCardTextureCoroutine = null;
 		}
+	}
 
+	void OnDestroy()
+	{
 		if (cardTexture != null)
 		{
-			cardTexture = null;
-			Resources.UnloadUnusedAssets();
-			System.GC.Collect();
+			Destroy(cardTexture);
 		}
 	}
 
@@ -38,7 +39,12 @@ public class RewardCardObject : MonoBehaviour
 	{
 		if (string.IsNullOrEmpty(cardUrl))
 		{
-			string cardImageFolder = Path.Combine(ToryCare.Config.DataRootDirectory, "RewardCard");
+			string cardImageFolder;
+#if UNITY_IOS && !UNITY_EDITOR
+			cardImageFolder = ToryCare.Config.DataRootDirectory;
+#else
+			cardImageFolder = Path.Combine(ToryCare.Config.DataRootDirectory, "RewardCard");
+#endif
 			if (!Directory.Exists(cardImageFolder))
 			{
 				Directory.CreateDirectory(cardImageFolder);

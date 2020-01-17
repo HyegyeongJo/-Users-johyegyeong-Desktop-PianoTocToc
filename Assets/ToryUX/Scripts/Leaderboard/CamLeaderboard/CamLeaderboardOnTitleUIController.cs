@@ -66,13 +66,12 @@ namespace ToryUX
             todayTitle.SetActive(false);
 
             // Load photo settings.
-            CamAdjustment.Instance.LoadSettings();
-            var mirrorScale = CamAdjustment.Instance.IsMirrored.Value ? new Vector3(-1f, 1f, 1f) : Vector3.one;
-            var rotationAmount = Quaternion.Euler(0f, 0f, 90f * CamAdjustment.Instance.RotateAxis.Value);
-            var zoomLevel = CamAdjustment.Instance.ZoomLevel.Value;
-            var imageOffset = new Vector2(CamAdjustment.Instance.OffsetX.Value, CamAdjustment.Instance.OffsetY.Value);
+			Vector3 mirrorScale = Vector3.one;
+			Quaternion rotationAmount = Quaternion.identity;
+			float zoomLevel = 1f;
+			Vector2 imageOffset = Vector2.zero;
 
-            /*
+			/*
             if (Leaderboard.EntriesToday.Count > 0)
             {
                 // Ready to show today rank.
@@ -181,8 +180,8 @@ namespace ToryUX
             }
             */
 
-            // Ready to show weekly rank.
-            for (int i = 0; i < 5; i++)
+			// Ready to show weekly rank.
+			for (int i = 0; i < 5; i++)
             {
                 GetRecordBar(i).sizeDelta = new Vector2(0, GetRecordBar(i).sizeDelta.y);
                 GetRecordBar(i).gameObject.SetActive(false);
@@ -283,13 +282,6 @@ namespace ToryUX
             for (int i = 0; i < 5; i++)
             {
                 GetRecordBar(i).sizeDelta = new Vector2(0, GetRecordBar(i).sizeDelta.y);
-            }
-
-            for (int i = 0; i < Mathf.Min(5, Leaderboard.EntriesLastSevenDays.Count); i++)
-            {
-                GetRecordPhoto(i).texture = null;
-                Resources.UnloadUnusedAssets();
-                System.GC.Collect();
             }
 
             // Callback.

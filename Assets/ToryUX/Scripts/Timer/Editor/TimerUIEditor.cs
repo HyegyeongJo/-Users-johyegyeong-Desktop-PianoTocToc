@@ -189,8 +189,9 @@ namespace ToryUX
                 foreach (var graphic in colorScheme.Value)
                 {
                     graphic.color = EditorGUILayout.ColorField(graphic.color, GUILayout.MaxWidth(65f));
-                }
-                EditorGUILayout.EndHorizontal();
+					PrefabUtility.RecordPrefabInstancePropertyModifications(graphic);
+				}
+				EditorGUILayout.EndHorizontal();
             }
 
             // Lap count text color scheme.
@@ -202,7 +203,8 @@ namespace ToryUX
                 ((TimerUI) target).lapCountColor = EditorGUILayout.ColorField(((TimerUI) target).lapCountColor, GUILayout.MaxWidth(65f));
                 Undo.RecordObject(target, "labCountPostfixColor change");
                 ((TimerUI) target).lapCountPostfixColor = EditorGUILayout.ColorField(((TimerUI) target).lapCountPostfixColor, GUILayout.MaxWidth(65f));
-                EditorGUILayout.EndHorizontal();
+				PrefabUtility.RecordPrefabInstancePropertyModifications(target);
+				EditorGUILayout.EndHorizontal();
             }
 
             EditorGUILayout.HelpBox("When the color does not seem to apply, clicking the color field once more to open color wheel window should solve the problem.", MessageType.None);
@@ -257,8 +259,9 @@ namespace ToryUX
                     timerUIWrapperAnimationPlayers[i].hideAnimation.animationClip = EditorGUILayout.ObjectField("Hide Anim. Clip", timerUIWrapperAnimationPlayers[i].hideAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
                     Undo.RecordObject(timerUIWrapperAnimationPlayers[i], "Timer hide animation speed change");
                     timerUIWrapperAnimationPlayers[i].hideAnimation.playSpeed = EditorGUILayout.FloatField("Hide Anim. Speed", timerUIWrapperAnimationPlayers[i].hideAnimation.playSpeed);
-                }
-                EditorGUI.indentLevel -= 1;
+					PrefabUtility.RecordPrefabInstancePropertyModifications(timerUIWrapperAnimationPlayers[i]);
+				}
+				EditorGUI.indentLevel -= 1;
             }
 
             // Timer tick/tock/alert animations.
@@ -298,8 +301,9 @@ namespace ToryUX
                     timerAnimations[i].alertAnimation.animationClip = EditorGUILayout.ObjectField("Alert Anim. Clip", timerAnimations[i].alertAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
                     Undo.RecordObject(timerAnimations[i], "Timer alert animation speed change");
                     timerAnimations[i].alertAnimation.playSpeed = EditorGUILayout.FloatField("Alert Anim. Speed", timerAnimations[i].alertAnimation.playSpeed);
-                }
-                EditorGUI.indentLevel -= 1;
+					PrefabUtility.RecordPrefabInstancePropertyModifications(timerAnimations[i]);
+				}
+				EditorGUI.indentLevel -= 1;
             }
 
             EditorUtility.SetDirty(target);
