@@ -108,13 +108,15 @@ namespace ToryUX
             EditorGUILayout.BeginHorizontal();
             Undo.RecordObject(scoreIconImage, "Score icon sprite change");
             scoreIconImage.sprite = EditorGUILayout.ObjectField(scoreIconImage.sprite, typeof(Sprite), false, GUILayout.Width(80f), GUILayout.Height(80f)) as Sprite;
-            EditorGUILayout.BeginVertical();
+			PrefabUtility.RecordPrefabInstancePropertyModifications(scoreIconImage);
+			EditorGUILayout.BeginVertical();
             EditorGUILayout.LabelField("Animation Clip/Speed");
             Undo.RecordObject(scoreIconAnimationPlayer, "Score icon animation clip change");
             scoreIconAnimationPlayer.idleAnimation.animationClip = EditorGUILayout.ObjectField(scoreIconAnimationPlayer.idleAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
             Undo.RecordObject(scoreIconAnimationPlayer, "Score icon animation speed change");
             scoreIconAnimationPlayer.idleAnimation.playSpeed = EditorGUILayout.FloatField(scoreIconAnimationPlayer.idleAnimation.playSpeed);
-            EditorGUILayout.Space();
+			PrefabUtility.RecordPrefabInstancePropertyModifications(scoreIconAnimationPlayer);
+			EditorGUILayout.Space();
             if (GUILayout.Button("Ping Object", EditorStyles.miniButton))
             {
                 EditorGUIUtility.PingObject(scoreIconImage.gameObject);
@@ -131,13 +133,15 @@ namespace ToryUX
             EditorGUILayout.BeginHorizontal();
             Undo.RecordObject(heroImageOnSuccess, "Hero image on success change");
             heroImageOnSuccess.sprite = EditorGUILayout.ObjectField(heroImageOnSuccess.sprite, typeof(Sprite), false, GUILayout.Width(80f), GUILayout.Height(80f)) as Sprite;
-            EditorGUILayout.BeginVertical();
+			PrefabUtility.RecordPrefabInstancePropertyModifications(heroImageOnSuccess);
+			EditorGUILayout.BeginVertical();
             EditorGUILayout.LabelField("Animation Clip/Speed");
             Undo.RecordObject(heroAnimationPlayerOnSuccess, "Hero image animation clip on success change");
             heroAnimationPlayerOnSuccess.idleAnimation.animationClip = EditorGUILayout.ObjectField(heroAnimationPlayerOnSuccess.idleAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
             Undo.RecordObject(heroAnimationPlayerOnSuccess, "Hero image animation speed on success change");
             heroAnimationPlayerOnSuccess.idleAnimation.playSpeed = EditorGUILayout.FloatField(heroAnimationPlayerOnSuccess.idleAnimation.playSpeed);
-            EditorGUILayout.Space();
+			PrefabUtility.RecordPrefabInstancePropertyModifications(heroAnimationPlayerOnSuccess);
+			EditorGUILayout.Space();
             if (GUILayout.Button("Ping Object", EditorStyles.miniButton))
             {
                 EditorGUIUtility.PingObject(heroImageOnSuccess.gameObject);
@@ -162,13 +166,15 @@ namespace ToryUX
             EditorGUILayout.BeginHorizontal();
             Undo.RecordObject(heroImageOnFail, "Hero image on fail change");
             heroImageOnFail.sprite = EditorGUILayout.ObjectField(heroImageOnFail.sprite, typeof(Sprite), false, GUILayout.Width(80f), GUILayout.Height(80f)) as Sprite;
-            EditorGUILayout.BeginVertical();
+			PrefabUtility.RecordPrefabInstancePropertyModifications(heroImageOnFail);
+			EditorGUILayout.BeginVertical();
             EditorGUILayout.LabelField("Animation Clip/Speed");
             Undo.RecordObject(heroAnimationPlayerOnFail, "Hero image animation clip on fail change");
             heroAnimationPlayerOnFail.idleAnimation.animationClip = EditorGUILayout.ObjectField(heroAnimationPlayerOnFail.idleAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
             Undo.RecordObject(heroAnimationPlayerOnFail, "Hero image animation speed on fail change");
             heroAnimationPlayerOnFail.idleAnimation.playSpeed = EditorGUILayout.FloatField(heroAnimationPlayerOnFail.idleAnimation.playSpeed);
-            EditorGUILayout.Space();
+			PrefabUtility.RecordPrefabInstancePropertyModifications(heroAnimationPlayerOnFail);
+			EditorGUILayout.Space();
             if (GUILayout.Button("Ping Object", EditorStyles.miniButton))
             {
                 EditorGUIUtility.PingObject(heroImageOnFail.gameObject);
@@ -196,8 +202,9 @@ namespace ToryUX
                 foreach (var graphic in colorScheme.Value)
                 {
                     graphic.color = EditorGUILayout.ColorField(graphic.color, GUILayout.MaxWidth(65f));
-                }
-                EditorGUILayout.EndHorizontal();
+					PrefabUtility.RecordPrefabInstancePropertyModifications(graphic);
+				}
+				EditorGUILayout.EndHorizontal();
             }
             EditorGUILayout.HelpBox("When the color does not seem to apply, clicking the color field once more to open color wheel window should solve the problem.", MessageType.None);
 
@@ -208,13 +215,15 @@ namespace ToryUX
             EditorGUILayout.BeginHorizontal();
             Undo.RecordObject(backdropImage, "Backdrop image change");
             backdropImage.sprite = EditorGUILayout.ObjectField(backdropImage.sprite, typeof(Sprite), false, GUILayout.Width(80f), GUILayout.Height(80f)) as Sprite;
-            EditorGUILayout.BeginVertical();
+			PrefabUtility.RecordPrefabInstancePropertyModifications(backdropImage);
+			EditorGUILayout.BeginVertical();
             EditorGUILayout.LabelField("Animation Clip/Speed");
             Undo.RecordObject(backdropAnimationPlayer, "Backdrop show animation clip change");
             backdropAnimationPlayer.showAnimation.animationClip = EditorGUILayout.ObjectField(backdropAnimationPlayer.showAnimation.animationClip, typeof(AnimationClip), false) as AnimationClip;
             Undo.RecordObject(backdropAnimationPlayer, "Backdrop show animation speed change");
             backdropAnimationPlayer.showAnimation.playSpeed = EditorGUILayout.FloatField(backdropAnimationPlayer.showAnimation.playSpeed);
-            EditorGUILayout.Space();
+			PrefabUtility.RecordPrefabInstancePropertyModifications(backdropAnimationPlayer);
+			EditorGUILayout.Space();
             if (GUILayout.Button("Ping Object", EditorStyles.miniButton))
             {
                 EditorGUIUtility.PingObject(backdropImage.gameObject);

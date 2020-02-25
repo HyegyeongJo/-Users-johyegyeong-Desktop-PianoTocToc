@@ -55,7 +55,8 @@ namespace ToryUX
             self.todayGradientColor = EditorGUILayout.ColorField(self.todayGradientColor, GUILayout.MaxWidth(65f));
             Undo.RecordObject(self, "todayTextColor change");
             self.todayTextColor = EditorGUILayout.ColorField(self.todayTextColor, GUILayout.MaxWidth(65f));
-            if (EditorGUI.EndChangeCheck())
+			PrefabUtility.RecordPrefabInstancePropertyModifications(self);
+			if (EditorGUI.EndChangeCheck())
             {
                 for (int i = 0; i < todaySolidColorObjects.Length; i++)
                 {
@@ -81,7 +82,8 @@ namespace ToryUX
             self.weeklyGradientColor = EditorGUILayout.ColorField(self.weeklyGradientColor, GUILayout.MaxWidth(65f));
             Undo.RecordObject(self, "weeklyTextColor change");
             self.weeklyTextColor = EditorGUILayout.ColorField(self.weeklyTextColor, GUILayout.MaxWidth(65f));
-            if (EditorGUI.EndChangeCheck())
+			PrefabUtility.RecordPrefabInstancePropertyModifications(self);
+			if (EditorGUI.EndChangeCheck())
             {
                 for (int i = 0; i < weeklySolidColorObjects.Length; i++)
                 {

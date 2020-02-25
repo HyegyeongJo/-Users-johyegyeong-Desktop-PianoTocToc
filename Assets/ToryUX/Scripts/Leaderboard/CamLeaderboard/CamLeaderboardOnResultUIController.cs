@@ -84,13 +84,6 @@ namespace ToryUX
             {
                 myBarGradient.hue = myBarGradientOriginalHue;
             }
-
-            for (int i = 0; i < Mathf.Min(4, Leaderboard.EntriesToday.Count); i++)
-            {
-                GetRecordPhoto(i).texture = null;
-                Resources.UnloadUnusedAssets();
-                System.GC.Collect();
-            }
         }
 
         Coroutine sequenceCoroutine;
@@ -193,7 +186,7 @@ namespace ToryUX
             {
                 if (TorywardManager.Instance.Snap != null)
                 {
-                    byte[] snapData = TorywardManager.Instance.Snap.EncodeToPNG();
+                    byte[] snapData = TorywardManager.Instance.ClippedSnap.EncodeToPNG();
                     Leaderboard.AddEntry(new LeaderboardEntry(snapData));
                 }
                 else
@@ -233,11 +226,10 @@ namespace ToryUX
             titleWrapper.Reset();
 
             // Load photo settings.
-            CamAdjustment.Instance.LoadSettings();
-            Vector3 mirrorScale = CamAdjustment.Instance.IsMirrored.Value ? new Vector3(-1f, 1f, 1f) : Vector3.one;
-            Quaternion rotationAmount = Quaternion.Euler(0f, 0f, CamAdjustment.Instance.RotateAxis.Value * 90f);
-            float zoomLevel = CamAdjustment.Instance.ZoomLevel.Value;
-            Vector2 imageOffset = new Vector2(CamAdjustment.Instance.OffsetX.Value, CamAdjustment.Instance.OffsetY.Value);
+            Vector3 mirrorScale = Vector3.one;
+			Quaternion rotationAmount = Quaternion.identity;
+            float zoomLevel = 1f;
+            Vector2 imageOffset = Vector2.zero;
 
             // Set photos and texts.
             Vector2 maskSizeDelta = GetRecordPhoto(0).transform.parent.GetComponent<RectTransform>().sizeDelta;

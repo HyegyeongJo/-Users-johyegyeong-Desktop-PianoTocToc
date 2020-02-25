@@ -21,6 +21,7 @@ namespace ToryUX
 				EditorGUILayout.Space();
 				Undo.RecordObject(component.text, "Button text change");
 				component.text.text = EditorGUILayout.TextField("Button Text", component.text.text);
+				PrefabUtility.RecordPrefabInstancePropertyModifications(component.text);
 				EditorGUILayout.Space();
 			}
 			base.OnInspectorGUI();

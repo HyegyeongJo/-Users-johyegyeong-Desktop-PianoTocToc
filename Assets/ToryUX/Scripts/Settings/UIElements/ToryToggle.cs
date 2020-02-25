@@ -76,17 +76,28 @@ namespace ToryUX
             }
         }
 
-        protected override void Awake()
-        {
-            base.Awake();
-            FetchTextObjects();
-            rectTransform = GetComponent<RectTransform>();
-            onClick.AddListener(Toggle);
+		protected override void Awake()
+		{
+			base.Awake();
+			FetchTextObjects();
+			rectTransform = GetComponent<RectTransform>();
+		}
 
-            BindToryValue();
-        }
+		protected override void Start()
+		{
+			base.Start();
 
-        public void BindToryValue()
+			onClick.AddListener(Toggle);
+			BindToryValue();
+		}
+
+		protected override void OnDestroy()
+		{
+			base.OnDestroy();
+			onClick.RemoveAllListeners();
+		}
+
+		public void BindToryValue()
         {
             boundToryInts = new List<ToryValue.ToryInt>();
 
@@ -107,7 +118,6 @@ namespace ToryUX
             }
 
             hasBoundToryValue = boundToryInts.Count > 0;
-            OnEnable();
         }
 
         protected override void OnEnable()
@@ -163,26 +173,26 @@ namespace ToryUX
             }
         }
 
-        public override void OnPointerEnter(PointerEventData eventData)
-        {
-            if (eventData.delta.magnitude > 0)
-            {
-                base.OnPointerEnter(eventData);
-                EventSystem.current.SetSelectedGameObject(gameObject);
-            }
-        }
+		public override void OnPointerEnter(PointerEventData eventData)
+		{
+			base.OnPointerEnter(eventData);
+			if (eventData.delta.magnitude > 0)
+			{
+				EventSystem.current.SetSelectedGameObject(gameObject);
+			}
+		}
 
-        public override void OnSelect(BaseEventData eventData)
-        {
-            base.OnSelect(eventData);
-            if (SettingsUI.Instance.selectionSound != null && interactable)
-            {
-                UISound.Play(SettingsUI.Instance.selectionSound);
-            }
-            SettingsUI.ScrollTo(rectTransform);
-        }
+		public override void OnSelect(BaseEventData eventData)
+		{
+			base.OnSelect(eventData);
+			if (SettingsUI.Instance.selectionSound != null && interactable)
+			{
+				UISound.Play(SettingsUI.Instance.selectionSound);
+			}
+			SettingsUI.ScrollTo(rectTransform);
+		}
 
-        public void UpdateValue()
+		public void UpdateValue()
         {
             #if UNITY_EDITOR
             if (valueText == null)
@@ -248,60 +258,60 @@ namespace ToryUX
             return null;
         }
 
-        public void Toggle()
-        {
-            if (CurrentOptionIndex >= options.Length - 1)
-            {
-                CurrentOptionIndex = 0;
-            }
-            else
-            {
-                CurrentOptionIndex += 1;
-            }
-            onToggle.Invoke(CurrentOptionIndex);
+		public void Toggle()
+		{
+			if (CurrentOptionIndex >= options.Length - 1)
+			{
+				CurrentOptionIndex = 0;
+			}
+			else
+			{
+				CurrentOptionIndex += 1;
+			}
+			onToggle.Invoke(CurrentOptionIndex);
 
-            UpdateValue();
+			UpdateValue();
 
-            if (SettingsUI.Instance.toggleSound != null && interactable)
-            {
-                UISound.Play(SettingsUI.Instance.toggleSound);
-            }
-        }
+			if (SettingsUI.Instance.toggleSound != null && interactable)
+			{
+				UISound.Play(SettingsUI.Instance.toggleSound);
+			}
+		}
 
-        public void ToggleReverse()
-        {
-            if (CurrentOptionIndex <= 0)
-            {
-                CurrentOptionIndex = options.Length - 1;
-            }
-            else
-            {
-                CurrentOptionIndex -= 1;
-            }
-            onToggle.Invoke(CurrentOptionIndex);
+		public void ToggleReverse()
+		{
+			if (CurrentOptionIndex <= 0)
+			{
+				CurrentOptionIndex = options.Length - 1;
+			}
+			else
+			{
+				CurrentOptionIndex -= 1;
+			}
+			onToggle.Invoke(CurrentOptionIndex);
 
-            if (SettingsUI.Instance.toggleSound != null && interactable)
-            {
-                UISound.Play(SettingsUI.Instance.toggleSound);
-            }
+			if (SettingsUI.Instance.toggleSound != null && interactable)
+			{
+				UISound.Play(SettingsUI.Instance.toggleSound);
+			}
 
-            UpdateValue();
-        }
+			UpdateValue();
+		}
 
-        public override void OnMove(AxisEventData eventData)
-        {
-            if (eventData.moveDir == MoveDirection.Left)
-            {
-                ToggleReverse();
-            }
-            else if (eventData.moveDir == MoveDirection.Right)
-            {
-                Toggle();
-            }
-            else
-            {
-                base.OnMove(eventData);
-            }
-        }
-    }
+		public override void OnMove(AxisEventData eventData)
+		{
+			if (eventData.moveDir == MoveDirection.Left)
+			{
+				ToggleReverse();
+			}
+			else if (eventData.moveDir == MoveDirection.Right)
+			{
+				Toggle();
+			}
+			else
+			{
+				base.OnMove(eventData);
+			}
+		}
+	}
 }

@@ -22,7 +22,6 @@ public class PianoKeyPressedAnimation : MonoBehaviour
          if (Input.GetKeyDown(KeyCode.A))
         {
             pianoKeyPressed[0].SetTrigger("KeyPressed");
-
         }
         if (Input.GetKeyDown(KeyCode.B))
         {

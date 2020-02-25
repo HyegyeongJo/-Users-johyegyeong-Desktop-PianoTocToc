@@ -18,7 +18,19 @@ namespace ToryUX
 			base.Awake();
 			FetchTextObjects();
 			rectTransform = GetComponent<RectTransform>();
+		}
+
+		protected override void Start()
+		{
+			base.Start();
+
 			onClick.AddListener(PlaySFX);
+		}
+
+		protected override void OnDestroy()
+		{
+			base.OnDestroy();
+			onClick.RemoveAllListeners();
 		}
 
 		void FetchTextObjects()
@@ -39,9 +51,9 @@ namespace ToryUX
 
 		public override void OnPointerEnter(PointerEventData eventData)
 		{
+			base.OnPointerEnter(eventData);
 			if (eventData.delta.magnitude > 0)
 			{
-				base.OnPointerEnter(eventData);
 				EventSystem.current.SetSelectedGameObject(gameObject);
 			}
 		}

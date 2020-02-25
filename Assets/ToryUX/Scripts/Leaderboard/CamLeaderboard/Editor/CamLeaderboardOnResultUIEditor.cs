@@ -64,8 +64,9 @@ namespace ToryUX
                 foreach (var graphic in colorScheme.Value)
                 {
                     graphic.color = EditorGUILayout.ColorField(graphic.color, GUILayout.MaxWidth(65f));
-                }
-                EditorGUILayout.EndHorizontal();
+					PrefabUtility.RecordPrefabInstancePropertyModifications(graphic);
+				}
+				EditorGUILayout.EndHorizontal();
             }
             EditorGUILayout.HelpBox("When the color does not seem to apply, clicking the color field once more to open color wheel window should solve the problem.", MessageType.None);
 

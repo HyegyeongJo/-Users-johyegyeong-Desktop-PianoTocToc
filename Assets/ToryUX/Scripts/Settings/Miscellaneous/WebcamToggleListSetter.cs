@@ -18,17 +18,6 @@ namespace ToryUX
 			ToryToggle toryToggle = GetComponent<ToryToggle>();
 			verticalLayoutGroup = GetComponentInParent<VerticalLayoutGroup>();
 
-			#if TORY_EYE
-			if (WebcamTextureManager.Instance.UseToryEyeCameraTexture)
-			{
-				verticalLayoutGroup.padding = new RectOffset();
-				verticalLayoutGroup.spacing = 20f;
-				gameObject.SetActive(false);
-				
-				return;
-			}
-			#endif
-
 			if (UIOrientationSetter.CurrentOrientation == UIOrientation.PortraitLeft ||
 				UIOrientationSetter.CurrentOrientation == UIOrientation.PortraitRight)
 			{

@@ -155,7 +155,7 @@ namespace ToryUX
 
         public void UpdateLapCount()
         {
-//            lapText.text = string.Format("Lap <color=#{3}>{0}</color><size={2}> / <color=#{4}>{1}</color></size>", Timer.LapCount, Timer.MaxLapCount, lapText.fontSize * lapCountPostfixScale, ColorUtility.ToHtmlStringRGBA(lapCountColor), ColorUtility.ToHtmlStringRGBA(lapCountPostfixColor));
+            lapText.text = string.Format("Lap <color=#{3}>{0}</color><size={2}> / <color=#{4}>{1}</color></size>", Timer.LapCount, Timer.MaxLapCount, lapText.fontSize * lapCountPostfixScale, ColorUtility.ToHtmlStringRGBA(lapCountColor), ColorUtility.ToHtmlStringRGBA(lapCountPostfixColor));
         }
 
         void OnDestroy()
