@@ -80,13 +80,5 @@ public class PianoKeyPressedAnimation : MonoBehaviour
         {
             pianoKeyPressed[14].SetTrigger("KeyPressed");
         }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            pianoKeyPressed[15].SetTrigger("KeyPressed");
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            pianoKeyPressed[16].SetTrigger("KeyPressed");
-        }
     }
 }

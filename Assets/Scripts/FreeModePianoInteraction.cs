@@ -71,17 +71,6 @@ public class FreeModePianoInteraction : MonoBehaviour
         {
             pianoPressed[13].Play();
         }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            pianoPressed[14].Play();
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            pianoPressed[15].Play();
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            pianoPressed[16].Play();
-        }
+
     }
 }

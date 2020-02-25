@@ -116,25 +116,7 @@ public class PianoKeyPressedOnObj : MonoBehaviour
 
             StartCoroutine(WaitFalseObj_14());
 }
-        if (Input.GetKeyDown(KeyCode.P))
-            {
-                musicalScaleCube[15].SetActive(true);
-            flowerCollider[15].SetActive(true);
-
-            StartCoroutine(WaitFalseObj_15());
-}
-        if (Input.GetKeyDown(KeyCode.Q))
-            {
-                musicalScaleCube[16].SetActive(true);
-            flowerCollider[16].SetActive(true);
-
-            StartCoroutine(WaitFalseObj_16());
-
-        }
-
-
-
-
+       
 
 
         if (Input.GetKeyUp(KeyCode.A))
@@ -320,22 +302,6 @@ public class PianoKeyPressedOnObj : MonoBehaviour
         if (musicalScaleCube[14].activeSelf == true)
             musicalScaleCube[14].SetActive(false);
         flowerCollider[14].SetActive(false);
-
-    }
-    IEnumerator WaitFalseObj_15()
-    {
-        yield return new WaitForSeconds(0.1f);
-        if (musicalScaleCube[15].activeSelf == true)
-            musicalScaleCube[15].SetActive(false);
-        flowerCollider[15].SetActive(false);
-
-    }
-    IEnumerator WaitFalseObj_16()
-    {
-        yield return new WaitForSeconds(0.1f);
-        if (musicalScaleCube[16].activeSelf == true)
-            musicalScaleCube[16].SetActive(false);
-        flowerCollider[16].SetActive(false);
 
     }
 
