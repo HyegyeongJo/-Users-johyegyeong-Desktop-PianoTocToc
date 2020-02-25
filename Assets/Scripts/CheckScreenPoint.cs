@@ -36,9 +36,15 @@ public class CheckScreenPoint : MonoBehaviour
         //TF.Scene.Play.Ended -= EndedPlay;
     }
 
+    private void Awake()
+    {
+        mainCam.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+        Debug.Log("Camera Rotate Check!!!!!!!!!");
+    }
+
     private void StartPlay()
     {
-        mainCam = GetComponent<Camera>();
+      //  mainCam = GetComponent<Camera>();
 
         Instantiate(collisionLine, new Vector3(0, -6.1f, 10f), Quaternion.identity);
 
