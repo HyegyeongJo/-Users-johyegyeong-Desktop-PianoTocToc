@@ -43,7 +43,7 @@ public class PianoKeyPressedAudio : MonoBehaviour
 
     void Update()
     {
-
+        PlayWithUniyAudio();
     }
 
     void PlayWithUniyAudio()
