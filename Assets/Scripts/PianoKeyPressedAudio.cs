@@ -7,7 +7,7 @@ public class PianoKeyPressedAudio : MonoBehaviour
 
     //NativeAudioPointer[] pointers;
     //NativeAudioController[] controllers;
-    int audioTrackIndex, audioTrackCount = 5;
+  // int audioTrackIndex, audioTrackCount = 5;
 
     void Awake()
     {
@@ -43,11 +43,7 @@ public class PianoKeyPressedAudio : MonoBehaviour
 
     void Update()
     {
-#if UNITY_EDITOR
-        PlayWithUniyAudio();
-#else
-        PlayWithNativeAudio();
-#endif
+
     }
 
     void PlayWithUniyAudio()
