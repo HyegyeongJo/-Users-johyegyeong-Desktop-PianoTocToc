@@ -1,6 +1,3 @@
 [submodule "Assets/Plugins/ToryAssets"]
 	path = Assets/Plugins/ToryAssets
 	url = git@gitlab.com:envisible-content/toryassets.git
-[submodule "Assets/Plugins/Cryptonite"]
-	path = Assets/Plugins/Cryptonite
-	url = git@gitlab.com:envisible-content/cryptonite.git
