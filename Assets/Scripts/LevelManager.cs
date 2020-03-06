@@ -8,8 +8,6 @@ public class LevelManager : MonoBehaviour
 
     public GameObject level1;
    
-
-
     private void OnEnable()
     {
         TF.Scene.Play.Started += StartPlay;
@@ -28,7 +26,6 @@ public class LevelManager : MonoBehaviour
         NoteCreator.ClearMusic-= PlayerClearMusic;
     }
 
-
     void StartPlay()
     {
 
@@ -39,17 +36,15 @@ public class LevelManager : MonoBehaviour
 
     }
 
-
     private void UpdatePlay()
     {
-      Debug.Log(level);
+//      Debug.Log(level);
 
      if(level == 2)
         {
             TF.Scene.Proceed();
         }
     }
-
 
     void PlayerClearMusic()
     {

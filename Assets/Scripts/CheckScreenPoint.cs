@@ -38,7 +38,7 @@ public class CheckScreenPoint : MonoBehaviour
 
     private void Awake()
     {
-       mainCam.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+      // mainCam.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
        // Debug.Log("Camera Rotate Check!!!!!!!!!");
     }
 
