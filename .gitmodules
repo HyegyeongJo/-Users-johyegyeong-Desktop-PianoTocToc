@@ -1,3 +1,9 @@
 [submodule "Assets/Plugins/ToryAssets"]
 	path = Assets/Plugins/ToryAssets
 	url = git@gitlab.com:envisible-content/toryassets.git
+[submodule "Packages/Screenshotautomator"]
+	path = Packages/Screenshotautomator
+	url = git@gitlab.com:envisible-content/auto-screenshot.git
+[submodule "Packages/FastlaneUCB"]
+	path = Packages/FastlaneUCB
+	url = git@gitlab.com:envisible-content/fastlane-ucb.git
