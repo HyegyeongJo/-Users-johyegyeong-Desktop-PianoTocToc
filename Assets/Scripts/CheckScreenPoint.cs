@@ -49,7 +49,7 @@ public class CheckScreenPoint : MonoBehaviour
         Instantiate(collisionLine, new Vector3(0, -6.1f, 10f), Quaternion.identity);
 
         float noteSpace = verticalSpaceCam.pixelWidth / note.Length;
-        float noteHeight =  /*0-(verticalSpaceCam.pixelHeight/10f)*/ -1110f;
+        float noteHeight =  /*0-(verticalSpaceCam.pixelHeight/10f)*/ -5110f;
 
         float notePosX1 = ((noteSpace * 2) - noteSpace) * verticalSpace;
         float notePosX2 = ((noteSpace * 4) - noteSpace) * verticalSpace;

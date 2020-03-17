@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a91b3568993c460c918045f5bb6c7f8, type: 3}
+  m_Name: ScreenshotAutomatorSettings
+  m_EditorClassIdentifier: 
+  _disableCapture: 0
+  _isPortrait: 0
+  _iOS_ScreenSizes:
+  - name: iPhone 5.5
+    description: iPhone 6s Plus, iPhone 7 Plus, iPhone 8 Plus
+    size: {x: 2208, y: 1242}
+  - name: iPhone 6.5
+    description: iPhone 11 Pro Max, iPhone 11, iPhone Xs Max, iPhone Xr
+    size: {x: 2688, y: 1242}
+  - name: iPad Pro 12.9
+    description: iPad Pro 2nd generation
+    size: {x: 2732, y: 2048}
+  - name: iPad Pro (12.9-inch) (3rd generation)
+    description: iPad Pro 3rd generation
+    size: {x: 2732, y: 2048}
+  _exportPath: ~/Desktop
+  _exportPath_iOS: /Users/hyepee/Desktop/appstore-metadata-manager/screenshots/ko
