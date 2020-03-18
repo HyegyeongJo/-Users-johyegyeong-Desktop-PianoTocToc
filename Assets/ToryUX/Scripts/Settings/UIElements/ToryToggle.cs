@@ -118,6 +118,14 @@ namespace ToryUX
             }
 
             hasBoundToryValue = boundToryInts.Count > 0;
+			
+			if (hasBoundToryValue && PlayerPrefsElite.key != null)
+			{
+				boundToryInts[0].LoadSavedValue();
+				CurrentOptionIndex = boundToryInts[0].Value;
+				
+				UpdateValue();
+			}
         }
 
         protected override void OnEnable()

@@ -96,6 +96,13 @@ namespace ToryUX
 			}
 
 			hasBoundToryValue = boundToryBools.Count > 0;
+			if (hasBoundToryValue && PlayerPrefsElite.key != null)
+			{
+				boundToryBools[0].LoadSavedValue();
+				isOn = boundToryBools[0].Value;
+				UpdateValue();
+				
+			}
 		}
 
 		protected override void OnEnable()
